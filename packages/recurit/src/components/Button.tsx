@@ -8,7 +8,7 @@ interface ButtonProps {
   onClick?: () => void,
 };
 
-const Button: React.SFC<ButtonProps> = ({ children = '', onClick = () => {} }) => {
+const Button: React.SFC<ButtonProps> = ({ children, onClick = () => {} }) => {
   const Container = useConstant(() => styled.button`
     cursor: pointer;
     width: fit-content;
