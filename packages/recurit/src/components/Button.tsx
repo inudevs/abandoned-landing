@@ -1,9 +1,14 @@
-import React from 'react';
+import React, { ReactNode } from 'react';
 import styled from 'styled-components';
 
 import useConstant from '../utils/useConstant';
 
-function Button({ children = '', onClick = () => {} }) {
+interface ButtonProps {
+  children: ReactNode,
+  onClick?: () => void,
+};
+
+const Button: React.SFC<ButtonProps> = ({ children = '', onClick = () => {} }) => {
   const Container = useConstant(() => styled.button`
     cursor: pointer;
     width: fit-content;
