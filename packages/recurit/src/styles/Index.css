@@ -1,0 +1,25 @@
+*,
+button {
+  font-family: 'Montserrat', 'Noto Sans KR', sans-serif;
+  line-height: 1.4;
+}
+
+html,
+body,
+div#root {
+  margin: 0;
+  height: 100%;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2, p {
+  margin: 0;
+}
