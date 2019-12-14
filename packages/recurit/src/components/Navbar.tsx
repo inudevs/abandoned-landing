@@ -10,7 +10,6 @@ const NavbarContainer = styled.div`
 `;
 
 const Navbar = () => (
-
   <NavbarContainer/>
 );
 
