@@ -16,7 +16,7 @@ const NavbarItemContainer = styled.div`
   color: white;
   font-size: 1.3rem;
   font-weight: 500;
-  text-shadow: 0px 0px 25px orangered;
+  text-shadow: 0px 0px 25px red;
   padding: 1rem 1.25rem;
   height: fit-content;
   cursor: pointer;
