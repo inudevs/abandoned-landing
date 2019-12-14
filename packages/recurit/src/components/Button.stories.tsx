@@ -3,5 +3,5 @@ import * as React from 'react';
 
 import Button from './Button';
 
-storiesOf('Task', module)
+storiesOf('Button', module)
   .add('default', () => <Button>클릭하기</Button>);
