@@ -4,10 +4,19 @@
   "repository": "https://github.com/inudevs/inudevs",
   "author": "inudevs",
   "license": "MIT",
+  "private": true,
   "workspaces": [
     "packages/*"
   ],
+  "scripts": {
+    "dev": "start-storybook -p 5555"
+  },
   "devDependencies": {
-    "lerna": "^3.19.0"
+    "@storybook/react": "^5.2.8",
+    "babel-loader": "^8.0.6",
+    "babel-preset-react-app": "^9.1.0",
+    "lerna": "^3.19.0",
+    "react-docgen-typescript-loader": "^3.6.0",
+    "typescript": "^3.7.3"
   }
 }
