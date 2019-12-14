@@ -9,7 +9,8 @@
     "packages/*"
   ],
   "scripts": {
-    "dev": "start-storybook -p 5555"
+    "dev": "start-storybook -p 5555",
+    "recurit": "yarn workspace recurit start"
   },
   "devDependencies": {
     "@storybook/react": "^5.2.8",
@@ -20,6 +21,7 @@
     "tslint": "^5.20.1",
     "tslint-config-airbnb": "^5.11.2",
     "tslint-config-prettier": "^1.18.0",
+    "tslint-react": "^4.1.0",
     "typescript": "^3.7.3"
   }
 }
