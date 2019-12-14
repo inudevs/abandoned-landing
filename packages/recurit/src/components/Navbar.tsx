@@ -14,23 +14,24 @@ const NavbarContainer = styled.div`
 
 const NavbarItemContainer = styled.div`
   color: white;
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   font-weight: 500;
   text-shadow: 0px 0px 25px orangered;
   padding: 1rem 1.25rem;
   height: fit-content;
   cursor: pointer;
-  background-color: rgba(239, 192, 56, 0.3);
+  background-color: rgba(239, 192, 56, 0.2);
   transition: background-color 0.5s ease;
 
-  &:hover {
-    background-color: rgba(239, 192, 56, 0.45);
+  &:hover,
+  &.selected {
+    background-color: rgba(239, 192, 56, 0.47);
   }
 `;
 
 const NavbarItemText = styled.span`
   margin-left: 0.8rem;
-  font-size: 1.3rem;
+  font-size: 1.2rem;
 `;
 
 interface INavbarItemProps {
@@ -47,11 +48,12 @@ const NavbarItem: React.FC<INavbarItemProps> = ({ message, iconClassName = '' })
       </NavbarItemText>
     </NavbarItemContainer>
   );
-}
+};
 
 const Navbar = () => (
   <NavbarContainer>
-    <NavbarItem message="모집 공고" iconClassName="far fa-paper-plane" />
+    <NavbarItem message="알아보기" iconClassName="fas fa-info-circle" />
+    <NavbarItem message="모집 공고" iconClassName="fas fa-paper-plane" />
   </NavbarContainer>
 );
 

@@ -4,7 +4,16 @@ import styled from 'styled-components';
 import Header from '../components/Header';
 import Layout from '../components/Layout';
 
+import background from '../assets/illusts/background-1.png';
 import illust from '../assets/illusts/inu-2020.png';
+
+const Background = styled.img`
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: -2;
+  height: 100%;
+`;
 
 const Image = styled.img`
   position: absolute;
@@ -55,6 +64,7 @@ const LogoHeading = styled.span`
 export default function Home() {
   return (
     <Layout className="home">
+      <Background src={background} />
       <Image src={illust} />
       <AnimatedHeader />
       <LogoContainer>
