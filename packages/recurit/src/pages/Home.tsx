@@ -14,11 +14,32 @@ const Image = styled.img`
   z-index: -1;
 `;
 
+const LogoContainer = styled.div`
+  margin-top: auto;
+  display: flex;
+  height: 10rem;
+  width: 100%;
+  background: linear-gradient(45deg, #343887, #000457);
+  z-index: -2;
+  color: white;
+  padding: 0 2rem;
+`;
+
+const LogoHeading = styled.span`
+  font-weight: 700;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  margin: auto;
+`;
+
 export default function Home() {
   return (
     <Layout className="home">
       <Image src={illust} />
       <Header />
+      <LogoContainer>
+        <LogoHeading>Together With</LogoHeading>
+      </LogoContainer>
     </Layout>
   );
 }

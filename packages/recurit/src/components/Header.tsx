@@ -6,7 +6,8 @@ import Button from './Button';
 const Container = styled.header`
   height: 70vh;
   padding: 0 2rem;
-  padding-top: 3.5rem;
+  padding-top: 0.5rem;
+  margin: auto 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
