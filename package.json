@@ -1,0 +1,13 @@
+{
+  "name": "inudevs",
+  "version": "0.0.1",
+  "repository": "https://github.com/inudevs/inudevs",
+  "author": "inudevs",
+  "license": "MIT",
+  "workspaces": [
+    "packages/*"
+  ],
+  "devDependencies": {
+    "lerna": "^3.19.0"
+  }
+}
