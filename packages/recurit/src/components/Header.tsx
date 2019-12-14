@@ -34,12 +34,13 @@ const Description = styled.p`
 `;
 
 type HeaderProps = {
+  className?: string,
   onClick?: () => void,
 };
 
-const Header: React.FC<HeaderProps> = ({ onClick }) => {
+const Header: React.FC<HeaderProps> = ({ className = '', onClick }) => {
   return (
-    <Container>
+    <Container className={className}>
       <Title>
         INU와 함께
         <br />
