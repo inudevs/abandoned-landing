@@ -10,7 +10,8 @@
   ],
   "scripts": {
     "dev": "start-storybook -p 5555",
-    "recurit": "yarn workspace recurit start"
+    "recurit": "yarn workspace recurit start",
+    "lint:ts": "tslint packages/**/*.{ts,tsx} --fix"
   },
   "devDependencies": {
     "@storybook/react": "^5.2.8",

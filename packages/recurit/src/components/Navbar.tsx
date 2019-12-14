@@ -10,8 +10,8 @@ const NavbarContainer = styled.div`
 `;
 
 const Navbar = () => (
-  <NavbarContainer>
-  </NavbarContainer>
+
+  <NavbarContainer/>
 );
 
 export default Navbar;

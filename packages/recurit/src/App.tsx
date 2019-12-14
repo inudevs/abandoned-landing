@@ -1,11 +1,11 @@
 import React from 'react';
 import Normalize from 'react-normalize';
-import styled from 'styled-components';
 import {
   BrowserRouter as Router,
   Route,
   Switch,
 } from 'react-router-dom';
+import styled from 'styled-components';
 
 import Navbar from './components/Navbar';
 import Home from './pages/Home';
