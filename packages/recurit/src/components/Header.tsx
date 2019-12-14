@@ -5,7 +5,8 @@ import Button from './Button';
 
 const Container = styled.header`
   height: 70vh;
-  padding: 2.5rem 2rem;
+  padding: 0 2rem;
+  padding-top: 3.5rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -13,7 +14,7 @@ const Container = styled.header`
 
 const Title = styled.h1`
   color: #000457;
-  font-size: 2.8rem;
+  font-size: 3.1rem;
   font-weight: 700;
 `;
 
@@ -28,6 +29,7 @@ const Separator = styled.div`
 const Description = styled.p`
   color: #343887;
   font-weight: 600;
+  font-size: 1.2rem;
 `;
 
 type HeaderProps = {
@@ -50,10 +52,10 @@ const Header: React.FC<HeaderProps> = ({ onClick }) => {
       <Description>
         2020년, 처음으로 시작합니다.
         <br />
-        디미고에서의 시간을 누구보다 부지런하고 의미있게 보내고 싶은 사람을 원합니다.
+        디미고에서의 시간을 누구보다 의미있게 보내고 싶은 사람을 원합니다.
       </Description>
       <Button onClick={onClick}>
-        지원하기
+        더 알아보기
       </Button>
     </Container>
   );
