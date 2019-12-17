@@ -9,6 +9,7 @@ import styled from 'styled-components';
 
 import Navbar from './components/Navbar';
 import Home from './pages/Home';
+import { JobDeveloper } from './pages/jobs';
 
 const AppContainer = styled.div`
   display: flex;
@@ -30,6 +31,7 @@ export default function App() {
           <ContentWrap>
             <Switch>
               <Route exact path="/" component={Home} />
+              <Route path="/jobs/developer" component={JobDeveloper} />
             </Switch>
           </ContentWrap>
         </AppContainer>

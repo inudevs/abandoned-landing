@@ -25,6 +25,7 @@
     "react-normalize": "^0.4.3",
     "react-router-dom": "^5.1.2",
     "react-scripts": "3.2.0",
+    "react-text-loop": "^2.3.0",
     "styled-components": "^4.4.1"
   },
   "devDependencies": {

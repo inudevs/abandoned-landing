@@ -2,6 +2,7 @@ import * as React from 'react';
 import styled from 'styled-components';
 
 import Button from './Button';
+import Separator from './Separator';
 
 const Container = styled.header`
   height: 70vh;
@@ -17,14 +18,6 @@ const Title = styled.h1`
   color: #000457;
   font-size: 3.1rem;
   font-weight: 700;
-`;
-
-const Separator = styled.div`
-  margin-top: 1rem;
-  margin-bottom: 2rem;
-  height: 10px;
-  width: 80px;
-  background-color: #000457;
 `;
 
 const Description = styled.p`
