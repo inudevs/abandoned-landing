@@ -17,6 +17,7 @@ const CulturePost = raw('../../data/developer/culture.md');
 const HeaderWrap = styled.div`
   height: 60vh;
   position: relative;
+  box-shadow: 0px 7px 36px -8px rgba(227, 227, 227, 1);
 `;
 
 const IllustWrap = styled.div`
@@ -34,11 +35,42 @@ const IllustContainer = styled.div`
   height: 100%;
 `;
 
+const IllustOverlay = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(
+    to bottom,
+    transparent 70%,
+    rgba(256,256,256,0.5),
+    #fff
+  );
+  z-index: 1;
+`;
+
 const DeveloperIllust = styled.img`
   height: 436px;
   position: absolute;
-  bottom: 0;
+  bottom: 6px;
   right: 156px;
+  filter: drop-shadow(0px 0px 5px rgba(0, 0, 0, 0.2));
+  animation: breathe 3s ease infinite;
+
+  @keyframes breathe {
+    50% {
+      transform: scale(1.025);
+    }
+    70% {
+      transform: scale(1.02);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
 `;
 
 const LightbulbIllust = styled.img`
@@ -47,6 +79,19 @@ const LightbulbIllust = styled.img`
   right: 58px;
   top: 36px;
   transform: rotate(28deg);
+  animation: lightbulb 3s ease infinite;
+
+  @keyframes lightbulb {
+    30% {
+      transform: rotate(32deg);
+    }
+    60% {
+      transform: rotate(30deg);
+    }
+    100% {
+      transform: rotate(28deg);
+    }
+  }
 `;
 
 const StyledHeader = styled(Header)`
@@ -79,7 +124,7 @@ const HeaderTitle: React.FC = () => {
 };
 
 const Content = styled.div`
-  padding: 0 2rem;
+  padding: 1.8rem 2rem;
   width: 85%;
 `;
 
@@ -90,6 +135,7 @@ export default class DeveloperJob extends React.Component {
         <HeaderWrap>
           <IllustWrap>
             <IllustContainer>
+              <IllustOverlay />
               <DeveloperIllust src={developerIllust} />
               <LightbulbIllust src={lightbulbIllust} />
             </IllustContainer>
