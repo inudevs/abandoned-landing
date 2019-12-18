@@ -1,4 +1,4 @@
-*,
+*:not(.token),
 button {
   font-family: 'Montserrat', 'Noto Sans KR', sans-serif;
   line-height: 1.4;

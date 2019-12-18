@@ -27,6 +27,7 @@
     "react-normalize": "^0.4.3",
     "react-router-dom": "^5.1.2",
     "react-scripts": "^3.3.0",
+    "react-syntax-highlighter": "^12.2.1",
     "react-text-loop": "^2.3.0",
     "styled-components": "^4.4.1"
   },
@@ -36,6 +37,7 @@
     "@types/react": "^16.9.11",
     "@types/react-dom": "^16.9.3",
     "@types/react-router-dom": "^5.1.2",
+    "@types/react-syntax-highlighter": "^11.0.3",
     "@types/styled-components": "^4.1.20"
   }
 }

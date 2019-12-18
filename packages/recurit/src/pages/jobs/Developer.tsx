@@ -1,9 +1,9 @@
 import React, { Fragment } from 'react';
-import ReactMarkdown from 'react-markdown';
 import TextLoop from 'react-text-loop';
 
 import Header from '../../components/Header';
 import Layout from '../../components/Layout';
+import Markdown from '../../components/Markdown';
 
 import raw from 'raw.macro';
 
@@ -42,9 +42,7 @@ export default class DeveloperJob extends React.Component {
           title={<HeaderTitle />}
           desc="열정만 있다면, 최고로 만들어 드리겠습니다."
         />
-        <ReactMarkdown
-          source={CulturePost}
-        />
+        <Markdown source={CulturePost} />
       </Layout>
     );
   }
