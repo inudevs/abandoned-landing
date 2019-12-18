@@ -1,10 +1,15 @@
 import React, { Fragment } from 'react';
+import ReactMarkdown from 'react-markdown';
 import TextLoop from 'react-text-loop';
 
 import Header from '../../components/Header';
 import Layout from '../../components/Layout';
 
-import developerTitles from '../../data/titles/developer.json';
+import raw from 'raw.macro';
+
+import developerTitles from '../../data/developer/titles.json';
+
+const CulturePost = raw('../../data/developer/culture.md');
 
 const HeaderTitle: React.FC = () => {
   return (
@@ -35,6 +40,10 @@ export default class DeveloperJob extends React.Component {
       <Layout className="developer-recurit">
         <Header
           title={<HeaderTitle />}
+          desc="열정만 있다면, 최고로 만들어 드리겠습니다."
+        />
+        <ReactMarkdown
+          source={CulturePost}
         />
       </Layout>
     );

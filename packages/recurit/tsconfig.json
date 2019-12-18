@@ -3,5 +3,8 @@
   "include": [
     "types",
     "src"
-  ]
+  ],
+  "compilerOptions": {
+    "jsx": "preserve"
+  }
 }
