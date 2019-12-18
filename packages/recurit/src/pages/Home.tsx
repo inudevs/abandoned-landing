@@ -8,6 +8,10 @@ import Layout from '../components/Layout';
 import background from '../assets/illusts/background-1.png';
 import illust from '../assets/illusts/inu-2020.png';
 
+const StyledLayout = styled(Layout)`
+  height: 100vh;
+`;
+
 const Background = styled.img`
   position: absolute;
   top: 0;
@@ -89,7 +93,7 @@ const HeaderDesc: React.FC = () => {
 
 export default function Home() {
   return (
-    <Layout className="home">
+    <StyledLayout className="home">
       <Background src={background} />
       <Image src={illust} />
       <AnimatedHeader
@@ -103,6 +107,6 @@ export default function Home() {
       <LogoContainer>
         <LogoHeading>Together With</LogoHeading>
       </LogoContainer>
-    </Layout>
+    </StyledLayout>
   );
 }

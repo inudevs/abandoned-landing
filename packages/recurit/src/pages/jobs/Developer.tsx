@@ -1,5 +1,6 @@
 import React, { Fragment } from 'react';
 import TextLoop from 'react-text-loop';
+import styled from 'styled-components';
 
 import Header from '../../components/Header';
 import Layout from '../../components/Layout';
@@ -34,6 +35,11 @@ const HeaderTitle: React.FC = () => {
   );
 };
 
+const Content = styled.div`
+  padding: 0 2rem;
+  width: 85%;
+`;
+
 export default class DeveloperJob extends React.Component {
   public render() {
     return (
@@ -42,7 +48,9 @@ export default class DeveloperJob extends React.Component {
           title={<HeaderTitle />}
           desc="열정만 있다면, 최고로 만들어 드리겠습니다."
         />
-        <Markdown source={CulturePost} />
+        <Content>
+          <Markdown source={CulturePost} />
+        </Content>
       </Layout>
     );
   }

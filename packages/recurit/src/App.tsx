@@ -13,7 +13,7 @@ import { JobDeveloper } from './pages/jobs';
 
 const AppContainer = styled.div`
   display: flex;
-  height: 100%;
+  height: auto;
 `;
 
 const ContentWrap = styled.div`
