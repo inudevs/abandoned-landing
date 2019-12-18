@@ -1,6 +1,7 @@
 import * as React from 'react';
 import styled from 'styled-components';
 
+import Button from '../components/Button';
 import Header from '../components/Header';
 import Layout from '../components/Layout';
 
@@ -34,6 +35,7 @@ const Image = styled.img`
 `;
 
 const AnimatedHeader = styled(Header)`
+  margin: auto 0;
   opacity: 0%;
   animation: reveal-header 1.2s forwards;
   animation-delay: 1.2s;
@@ -61,12 +63,43 @@ const LogoHeading = styled.span`
   margin: auto;
 `;
 
+const HeaderTitle: React.FC = () => {
+  return (
+    <span>
+      INU와 함께
+      <br />
+      새로운 역사를
+      <br />
+      만들어 나갈 사람을
+      <br />
+      찾습니다.
+    </span>
+  );
+};
+
+const HeaderDesc: React.FC = () => {
+  return (
+    <span>
+      2020년, 처음으로 시작합니다.
+      <br />
+      디미고에서의 시간을 누구보다 의미있게 보내고 싶은 사람을 원합니다.
+    </span>
+  );
+};
+
 export default function Home() {
   return (
     <Layout className="home">
       <Background src={background} />
       <Image src={illust} />
-      <AnimatedHeader />
+      <AnimatedHeader
+        title={<HeaderTitle />}
+        desc={<HeaderDesc />}
+      >
+        <Button>
+          더 알아보기
+        </Button>
+      </AnimatedHeader>
       <LogoContainer>
         <LogoHeading>Together With</LogoHeading>
       </LogoContainer>

@@ -1,14 +1,12 @@
 import * as React from 'react';
 import styled from 'styled-components';
 
-import Button from './Button';
 import Separator from './Separator';
 
 const Container = styled.header`
   height: 70vh;
   padding: 0 2rem;
   padding-top: 0.5rem;
-  margin: auto 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -28,30 +26,22 @@ const Description = styled.p`
 
 type HeaderProps = {
   className?: string,
-  onClick?: () => void,
+  title?: React.ReactNode,
+  desc?: React.ReactNode,
+  children?: React.ReactNode,
 };
 
-const Header: React.FC<HeaderProps> = ({ className = '', onClick }) => {
+const Header: React.FC<HeaderProps> = ({ className = '', title = '', desc = '', children }) => {
   return (
     <Container className={className}>
       <Title>
-        INU와 함께
-        <br />
-        새로운 역사를
-        <br />
-        만들어 나갈 사람을
-        <br />
-        찾습니다.
+        {title}
       </Title>
       <Separator />
       <Description>
-        2020년, 처음으로 시작합니다.
-        <br />
-        디미고에서의 시간을 누구보다 의미있게 보내고 싶은 사람을 원합니다.
+        {desc}
       </Description>
-      <Button onClick={onClick}>
-        더 알아보기
-      </Button>
+      {children}
     </Container>
   );
 };

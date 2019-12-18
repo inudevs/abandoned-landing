@@ -1,7 +1,7 @@
 import React from 'react';
 import Normalize from 'react-normalize';
 import {
-  BrowserRouter as Router,
+  HashRouter as Router,
   Route,
   Switch,
 } from 'react-router-dom';
