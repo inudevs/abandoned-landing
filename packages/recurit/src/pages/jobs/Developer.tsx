@@ -12,6 +12,17 @@ import developerTitles from '../../data/developer/titles.json';
 
 const CulturePost = raw('../../data/developer/culture.md');
 
+const HeaderWrap = styled.div`
+  height: 60vh;
+  position: relative;
+`;
+
+const StyledHeader = styled(Header)`
+  height: unset;
+  position: absolute;
+  bottom: 2rem;
+`;
+
 const HeaderTitle: React.FC = () => {
   return (
     <span>
@@ -44,10 +55,12 @@ export default class DeveloperJob extends React.Component {
   public render() {
     return (
       <Layout className="developer-recurit">
-        <Header
-          title={<HeaderTitle />}
-          desc="열정만 있다면, 최고로 만들어 드리겠습니다."
-        />
+        <HeaderWrap>
+          <StyledHeader
+            title={<HeaderTitle />}
+            desc="열정만 있다면, 최고로 만들어 드리겠습니다."
+          />
+        </HeaderWrap>
         <Content>
           <Markdown source={CulturePost} />
         </Content>
