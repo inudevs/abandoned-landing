@@ -119,14 +119,14 @@ const PeopleIllust = styled.img`
   &:first-child {
     left: 0;
     height: 149px;
-    animation: rotate-people 1.5s cubic-bezier(0.075, 0.82, 0.165, 1) infinite;
+    animation: breathe-people 1.5s cubic-bezier(0.075, 0.82, 0.165, 1) infinite;
     animation-delay: 1.5s;
   }
 
   &:nth-child(2) {
     right: 10px;
     height: 160px;
-    animation: rotate-people 1.5s cubic-bezier(0.075, 0.82, 0.165, 1) infinite;
+    animation: breathe-people 1.5s cubic-bezier(0.075, 0.82, 0.165, 1) infinite;
     animation-delay: 2s;
   }
 
@@ -134,11 +134,11 @@ const PeopleIllust = styled.img`
     left: 50px;
     bottom: 30px;
     height: 150px;
-    animation: rotate-people 1.5s cubic-bezier(0.075, 0.82, 0.165, 1) infinite;
+    animation: breathe-people 1.5s cubic-bezier(0.075, 0.82, 0.165, 1) infinite;
     animation-delay: 1s;
   }
 
-  @keyframes rotate-people {
+  @keyframes breathe-people {
     25% {
       transform: scale(1.02);
     }
