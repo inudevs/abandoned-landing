@@ -7,17 +7,13 @@ import Header from '../../components/Header';
 import Layout from '../../components/Layout';
 import Markdown from '../../components/Markdown';
 
-import { Breathe, BreathePrimary, Shake } from '../../components/keyframes';
+import {
+  CrowdIllust,
+  DeveloperIllust,
+  LightbulbIllust,
+} from '../../components/illusts';
 
 import developerTitles from '../../data/developer/titles.json';
-
-import developerIllust from '../../assets/illusts/dev-4.png';
-import lightbulbIllust from '../../assets/illusts/lightbulb.png';
-
-import peopleIllust1 from '../../assets/illusts/people-1.png';
-import peopleIllust2 from '../../assets/illusts/people-2.png';
-import peopleIllust3 from '../../assets/illusts/people-3.png';
-
 const CulturePost = raw('../../data/developer/culture.md');
 
 const HeaderWrap = styled.div`
@@ -56,65 +52,6 @@ const IllustOverlay = styled.div`
     #fff
   );
   z-index: 1;
-`;
-
-const DeveloperIllust = styled.img`
-  height: 436px;
-  position: absolute;
-  bottom: 6px;
-  right: 256px;
-  filter: drop-shadow(0px 0px 5px rgba(0, 0, 0, 0.2));
-  animation: ${BreathePrimary} 3s ease infinite;
-`;
-
-const LightbulbIllust = styled.img`
-  height: 145px;
-  position: absolute;
-  right: 188px;
-  top: 36px;
-  transform: rotate(28deg);
-  animation: ${Shake} 3s ease infinite;
-`;
-
-const PeopleWrapper = styled.div`
-  position: absolute;
-  width: 256px;
-  height: 100%;
-  bottom: 20px;
-  right: 0px;
-`;
-
-const PeopleSegments = styled.div`
-  position: relative;
-  height: 100%;
-  width: 100%;
-`;
-
-const PeopleIllust = styled.img`
-  position: absolute;
-  bottom: 80px;
-
-  &:first-child {
-    left: 0;
-    height: 149px;
-    animation: ${Breathe} 1.5s cubic-bezier(0.075, 0.82, 0.165, 1) infinite;
-    animation-delay: 1.5s;
-  }
-
-  &:nth-child(2) {
-    right: 10px;
-    height: 160px;
-    animation: ${Breathe} 1.5s cubic-bezier(0.075, 0.82, 0.165, 1) infinite;
-    animation-delay: 2s;
-  }
-
-  &:last-child {
-    left: 50px;
-    bottom: 30px;
-    height: 150px;
-    animation: ${Breathe} 1.5s cubic-bezier(0.075, 0.82, 0.165, 1) infinite;
-    animation-delay: 1s;
-  }
 `;
 
 const StyledHeader = styled(Header)`
@@ -159,15 +96,10 @@ export default class DeveloperJob extends React.Component {
           <IllustWrap>
             <IllustContainer>
               <IllustOverlay />
-              <DeveloperIllust src={developerIllust} />
-              <LightbulbIllust src={lightbulbIllust} />
-              <PeopleWrapper>
-                <PeopleSegments>
-                  <PeopleIllust src={peopleIllust1} />
-                  <PeopleIllust src={peopleIllust3} />
-                  <PeopleIllust src={peopleIllust2} />
-                </PeopleSegments>
-              </PeopleWrapper>
+              <CrowdIllust left={true} />
+              <CrowdIllust />
+              <LightbulbIllust />
+              <DeveloperIllust />
             </IllustContainer>
           </IllustWrap>
           <StyledHeader

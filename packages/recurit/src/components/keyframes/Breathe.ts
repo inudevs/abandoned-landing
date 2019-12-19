@@ -16,5 +16,7 @@ const BreatheGenerator = ({ primary = false }: BreatheGeneratorProps) => keyfram
   }
 `;
 
+const Breathe = BreatheGenerator({});
+
 export const BreathePrimary = BreatheGenerator({ primary: true });
-export const Breathe = BreatheGenerator({});
+export default Breathe;
