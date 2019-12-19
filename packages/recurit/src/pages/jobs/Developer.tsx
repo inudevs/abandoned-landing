@@ -7,6 +7,8 @@ import Header from '../../components/Header';
 import Layout from '../../components/Layout';
 import Markdown from '../../components/Markdown';
 
+import { Breathe, BreathePrimary, Shake } from '../../components/keyframes';
+
 import developerTitles from '../../data/developer/titles.json';
 
 import developerIllust from '../../assets/illusts/dev-4.png';
@@ -62,19 +64,7 @@ const DeveloperIllust = styled.img`
   bottom: 6px;
   right: 256px;
   filter: drop-shadow(0px 0px 5px rgba(0, 0, 0, 0.2));
-  animation: breathe 3s ease infinite;
-
-  @keyframes breathe {
-    25% {
-      transform: scale(1.025);
-    }
-    65% {
-      transform: scale(1.02);
-    }
-    100% {
-      transform: scale(1);
-    }
-  }
+  animation: ${BreathePrimary} 3s ease infinite;
 `;
 
 const LightbulbIllust = styled.img`
@@ -83,19 +73,7 @@ const LightbulbIllust = styled.img`
   right: 188px;
   top: 36px;
   transform: rotate(28deg);
-  animation: lightbulb 3s ease infinite;
-
-  @keyframes lightbulb {
-    25% {
-      transform: rotate(40deg);
-    }
-    65% {
-      transform: rotate(36deg);
-    }
-    100% {
-      transform: rotate(28deg);
-    }
-  }
+  animation: ${Shake} 3s ease infinite;
 `;
 
 const PeopleWrapper = styled.div`
@@ -119,14 +97,14 @@ const PeopleIllust = styled.img`
   &:first-child {
     left: 0;
     height: 149px;
-    animation: breathe-people 1.5s cubic-bezier(0.075, 0.82, 0.165, 1) infinite;
+    animation: ${Breathe} 1.5s cubic-bezier(0.075, 0.82, 0.165, 1) infinite;
     animation-delay: 1.5s;
   }
 
   &:nth-child(2) {
     right: 10px;
     height: 160px;
-    animation: breathe-people 1.5s cubic-bezier(0.075, 0.82, 0.165, 1) infinite;
+    animation: ${Breathe} 1.5s cubic-bezier(0.075, 0.82, 0.165, 1) infinite;
     animation-delay: 2s;
   }
 
@@ -134,20 +112,8 @@ const PeopleIllust = styled.img`
     left: 50px;
     bottom: 30px;
     height: 150px;
-    animation: breathe-people 1.5s cubic-bezier(0.075, 0.82, 0.165, 1) infinite;
+    animation: ${Breathe} 1.5s cubic-bezier(0.075, 0.82, 0.165, 1) infinite;
     animation-delay: 1s;
-  }
-
-  @keyframes breathe-people {
-    25% {
-      transform: scale(1.02);
-    }
-    65% {
-      transform: scale(1.01);
-    }
-    100% {
-      transform: scale(1);
-    }
   }
 `;
 
