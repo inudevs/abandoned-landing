@@ -12,6 +12,10 @@ import developerTitles from '../../data/developer/titles.json';
 import developerIllust from '../../assets/illusts/dev-4.png';
 import lightbulbIllust from '../../assets/illusts/lightbulb.png';
 
+import peopleIllust1 from '../../assets/illusts/people-1.png';
+import peopleIllust2 from '../../assets/illusts/people-2.png';
+import peopleIllust3 from '../../assets/illusts/people-3.png';
+
 const CulturePost = raw('../../data/developer/culture.md');
 
 const HeaderWrap = styled.div`
@@ -31,7 +35,7 @@ const IllustWrap = styled.div`
 
 const IllustContainer = styled.div`
   position: relative;
-  width: 500px;
+  width: 700px;
   height: 100%;
 `;
 
@@ -56,15 +60,15 @@ const DeveloperIllust = styled.img`
   height: 436px;
   position: absolute;
   bottom: 6px;
-  right: 156px;
+  right: 256px;
   filter: drop-shadow(0px 0px 5px rgba(0, 0, 0, 0.2));
   animation: breathe 3s ease infinite;
 
   @keyframes breathe {
-    50% {
+    25% {
       transform: scale(1.025);
     }
-    70% {
+    65% {
       transform: scale(1.02);
     }
     100% {
@@ -76,20 +80,73 @@ const DeveloperIllust = styled.img`
 const LightbulbIllust = styled.img`
   height: 145px;
   position: absolute;
-  right: 58px;
+  right: 188px;
   top: 36px;
   transform: rotate(28deg);
   animation: lightbulb 3s ease infinite;
 
   @keyframes lightbulb {
-    30% {
-      transform: rotate(32deg);
+    25% {
+      transform: rotate(40deg);
     }
-    60% {
-      transform: rotate(30deg);
+    65% {
+      transform: rotate(36deg);
     }
     100% {
       transform: rotate(28deg);
+    }
+  }
+`;
+
+const PeopleWrapper = styled.div`
+  position: absolute;
+  width: 256px;
+  height: 100%;
+  bottom: 20px;
+  right: 0px;
+`;
+
+const PeopleSegments = styled.div`
+  position: relative;
+  height: 100%;
+  width: 100%;
+`;
+
+const PeopleIllust = styled.img`
+  position: absolute;
+  bottom: 80px;
+
+  &:first-child {
+    left: 0;
+    height: 149px;
+    animation: rotate-people 1.5s cubic-bezier(0.075, 0.82, 0.165, 1) infinite;
+    animation-delay: 1.5s;
+  }
+
+  &:nth-child(2) {
+    right: 10px;
+    height: 160px;
+    animation: rotate-people 1.5s cubic-bezier(0.075, 0.82, 0.165, 1) infinite;
+    animation-delay: 2s;
+  }
+
+  &:last-child {
+    left: 50px;
+    bottom: 30px;
+    height: 150px;
+    animation: rotate-people 1.5s cubic-bezier(0.075, 0.82, 0.165, 1) infinite;
+    animation-delay: 1s;
+  }
+
+  @keyframes rotate-people {
+    25% {
+      transform: scale(1.02);
+    }
+    65% {
+      transform: scale(1.01);
+    }
+    100% {
+      transform: scale(1);
     }
   }
 `;
@@ -138,6 +195,13 @@ export default class DeveloperJob extends React.Component {
               <IllustOverlay />
               <DeveloperIllust src={developerIllust} />
               <LightbulbIllust src={lightbulbIllust} />
+              <PeopleWrapper>
+                <PeopleSegments>
+                  <PeopleIllust src={peopleIllust1} />
+                  <PeopleIllust src={peopleIllust3} />
+                  <PeopleIllust src={peopleIllust2} />
+                </PeopleSegments>
+              </PeopleWrapper>
             </IllustContainer>
           </IllustWrap>
           <StyledHeader
