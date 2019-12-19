@@ -20,6 +20,7 @@ const CrowdWrapper = styled.div<CrowdProps>`
   ${({ left }) => left && css`
     left: 0px;
     right: unset;
+    transform: scaleX(-1);
   `};
 `;
 
