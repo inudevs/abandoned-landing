@@ -5,17 +5,21 @@ import styled from 'styled-components';
 import CodeBlock from './CodeBlock';
 
 const Container = styled.div`
+  color: rgba(0, 0, 0, 0.85);
+
   h1 {
     border-bottom: 1px solid rgba(52, 56, 135, 0.2);
     padding-bottom: 0.5rem;
-    font-size: 1.3rem;
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin-top: 2.5rem;
   }
 
   blockquote {
-    font-size: 1.25em;
-    margin: 1em 0;
-    padding-left: 1em;
-    border-left: 3px solid rgb(55, 53, 47);
+    font-size: 1.25rem;
+    margin: 1rem 0;
+    padding-left: 1rem;
+    border-left: 5px solid rgba(52, 56, 135, 0.2);
   }
 
   code {
