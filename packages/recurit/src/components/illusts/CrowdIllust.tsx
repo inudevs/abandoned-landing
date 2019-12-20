@@ -30,7 +30,7 @@ const Crowd = styled.div`
   width: 100%;
 `;
 
-const PeopleIllust = styled.img`
+const PeopleIllust = styled.img<CrowdProps>`
   position: absolute;
   bottom: 80px;
 
@@ -39,6 +39,10 @@ const PeopleIllust = styled.img`
     height: 149px;
     animation: ${Breathe} 1.5s cubic-bezier(0.075, 0.82, 0.165, 1) infinite;
     animation-delay: 1.5s;
+
+    ${({ left }) => left && css`
+      animation-delay: 1.8s;
+    `};
   }
 
   &:nth-child(2) {
@@ -46,6 +50,10 @@ const PeopleIllust = styled.img`
     height: 160px;
     animation: ${Breathe} 1.5s cubic-bezier(0.075, 0.82, 0.165, 1) infinite;
     animation-delay: 2s;
+
+    ${({ left }) => left && css`
+      animation-delay: 2.3s;
+    `};
   }
 
   &:last-child {
@@ -54,6 +62,10 @@ const PeopleIllust = styled.img`
     height: 150px;
     animation: ${Breathe} 1.5s cubic-bezier(0.075, 0.82, 0.165, 1) infinite;
     animation-delay: 1s;
+
+    ${({ left }) => left && css`
+      animation-delay: 1.3s;
+    `};
   }
 `;
 
@@ -61,9 +73,13 @@ const CrowdIllust: React.FC<CrowdProps> = ({ left = false }) => {
   return (
     <CrowdWrapper left={left}>
       <Crowd>
-        <PeopleIllust src={peopleIllusts[0]} />
-        <PeopleIllust src={peopleIllusts[1]} />
-        <PeopleIllust src={peopleIllusts[2]} />
+        {peopleIllusts.map((illust, idx) =>
+          <PeopleIllust
+            src={illust}
+            key={`crowd-${left}-${idx}`}
+            left={left}
+          />,
+        )}
       </Crowd>
     </CrowdWrapper>
   );
