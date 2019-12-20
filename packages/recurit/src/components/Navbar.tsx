@@ -9,7 +9,7 @@ const NavbarContainer = styled.div`
   flex-shrink: 0;
   height: auto;
   width: 13.5rem;
-  background-image: linear-gradient(to bottom, #FDE39F, #FCDC88, #EFC038);
+  background-image: linear-gradient(to right, #FDE39F, #FCDC88);
 `;
 
 const NavbarItemContainer = styled.div`

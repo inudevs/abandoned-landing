@@ -5,6 +5,12 @@ import styled from 'styled-components';
 import CodeBlock from './CodeBlock';
 
 const Container = styled.div`
+  h1 {
+    border-bottom: 1px solid rgba(52, 56, 135, 0.2);
+    padding-bottom: 0.5rem;
+    font-size: 1.3rem;
+  }
+
   blockquote {
     font-size: 1.25em;
     margin: 1em 0;

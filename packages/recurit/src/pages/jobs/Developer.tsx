@@ -6,6 +6,7 @@ import styled from 'styled-components';
 import Header from '../../components/Header';
 import Layout from '../../components/Layout';
 import Markdown from '../../components/Markdown';
+import Section from '../../components/Section';
 
 import {
   CrowdIllust,
@@ -108,7 +109,12 @@ export default class DeveloperJob extends React.Component {
           />
         </HeaderWrap>
         <Content>
-          <Markdown source={CulturePost} />
+          <Section
+            title="INU가 만들 개발 문화"
+            desc="모두가 성장할 수 있는 동아리 협업 문화"
+          >
+            <Markdown source={CulturePost} />
+          </Section>
         </Content>
       </Layout>
     );

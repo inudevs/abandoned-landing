@@ -14,6 +14,7 @@ import { JobDeveloper } from './pages/jobs';
 const AppContainer = styled.div`
   display: flex;
   height: auto;
+  min-height: 100vh;
 `;
 
 const ContentWrap = styled.div`
