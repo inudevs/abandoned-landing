@@ -1,5 +1,6 @@
 export {
   default as Breathe,
-  BreathePrimary as BreathePrimary,
+  BreathePrimary,
 } from './Breathe';
+export { default as Lighten } from './Lighten';
 export { default as Shake } from './Shake';
