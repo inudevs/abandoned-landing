@@ -20,6 +20,7 @@ const AppContainer = styled.div`
 const ContentWrap = styled.div`
   display: flex;
   flex: 1 1;
+  width: calc(100% - 13.5rem);
 `;
 
 export default function App() {
