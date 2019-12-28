@@ -14,6 +14,16 @@ import {
 import background from '../assets/illusts/background-1.png';
 import illust from '../assets/illusts/inu-2020.png';
 
+import partnerData from '../data/partners.json';
+
+interface IPartner {
+  logo: string;
+  height: number;
+  width: number;
+}
+
+const partners = partnerData as IPartner[];
+
 const StyledLayout = styled(Layout)`
   height: 100vh;
 `;
@@ -48,6 +58,8 @@ const AnimatedHeader = styled(Header)`
 const LogoContainer = styled.div`
   margin-top: auto;
   display: flex;
+  flex-direction: column;
+  justify-content: center;
   height: 10rem;
   width: 100%;
   background: linear-gradient(45deg, #343887, #000457);
@@ -60,7 +72,20 @@ const LogoHeading = styled.span`
   font-weight: 700;
   font-size: 1.1rem;
   text-transform: uppercase;
-  margin: auto;
+  margin: 0 auto;
+  margin-bottom: 1rem;
+`;
+
+const LogoSlider = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  img {
+    margin-left: 3rem;
+    opacity: 0.6;
+    filter: brightness(0) invert(1);
+  }
 `;
 
 const HeaderTitle: React.FC = () => {
@@ -104,6 +129,16 @@ const Home: React.FC<RouteComponentProps> = ({ history }) => {
       </AnimatedHeader>
       <LogoContainer>
         <LogoHeading>Together With</LogoHeading>
+        <LogoSlider>
+          {partners.map(({ logo, height, width }, idx) => (
+            <img
+              key={`partner-${idx}`}
+              height={`${height}px`}
+              width={`${width}px`}
+              src={require(`../assets/partners/${logo}.png`)}
+            />
+          ))}
+        </LogoSlider>
       </LogoContainer>
     </StyledLayout>
   );
