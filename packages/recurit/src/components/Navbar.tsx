@@ -3,6 +3,11 @@ import styled from 'styled-components';
 
 import FontAwesomeIcon from './FontAwesomeIcon';
 
+import {
+  SlideIn,
+  SlideInWithOpacity,
+} from './keyframes';
+
 import name from '../assets/typography/name.png';
 import slogan from '../assets/typography/slogan.png';
 
@@ -33,12 +38,18 @@ const Brand = styled.div`
 `;
 
 const Name = styled.img`
-  /* width: 80px; */
   height: 32px;
+  transform: translateX(-140%);
+  animation: ${SlideIn} 1.2s forwards;
+  animation-delay: 1.5s;
 `;
 
 const Slogan = styled.img`
   height: 32px;
+  transform: translateX(-300%);
+  opacity: 0.3;
+  animation: ${SlideInWithOpacity} 1.5s forwards;
+  animation-delay: 1.5s;
 `;
 
 const NavbarItemContainer = styled.div`

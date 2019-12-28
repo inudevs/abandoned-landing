@@ -5,6 +5,11 @@ import Button from '../components/Button';
 import Header from '../components/Header';
 import Layout from '../components/Layout';
 
+import {
+  Opacity,
+  SlideInWithSlowerOpacity,
+} from '../components/keyframes';
+
 import background from '../assets/illusts/background-1.png';
 import illust from '../assets/illusts/inu-2020.png';
 
@@ -27,26 +32,16 @@ const Image = styled.img`
   width: 57rem;
   z-index: -1;
   transform: translateX(100%);
-  /* transition: opacity .3s ease-in-out; */
-  animation: slide-image 0.8s forwards;
+  animation: ${SlideInWithSlowerOpacity} 0.8s forwards;
   animation-delay: 0.5s;
   opacity: 0.65;
-
-  @keyframes slide-image {
-    50% { opacity: 0.85; }
-    100% { transform: translateX(0%); opacity: 1; }
-  }
 `;
 
 const AnimatedHeader = styled(Header)`
   margin: auto 0;
   opacity: 0%;
-  animation: reveal-header 1.2s forwards;
+  animation: ${Opacity} 1.2s forwards;
   animation-delay: 1.2s;
-
-  @keyframes reveal-header {
-    100% { opacity: 100%; }
-  }
 `;
 
 const LogoContainer = styled.div`
