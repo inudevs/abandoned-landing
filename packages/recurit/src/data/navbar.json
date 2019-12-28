@@ -1,0 +1,17 @@
+[
+  {
+    "name": "알아보기",
+    "icon": "fas fa-info-circle",
+    "route": "/about"
+  },
+  {
+    "name": "모집공고",
+    "icon": "fas fa-paper-plane",
+    "route": "/jobs"
+  },
+  {
+    "name": "커리큘럼",
+    "icon": "fas fa-book-dead",
+    "route": "/course"
+  }
+]

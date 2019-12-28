@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { RouteComponentProps, withRouter } from 'react-router-dom';
 import styled from 'styled-components';
 
 import Button from '../components/Button';
@@ -86,7 +87,7 @@ const HeaderDesc: React.FC = () => {
   );
 };
 
-const Home: React.FC = () => {
+const Home: React.FC<RouteComponentProps> = ({ history }) => {
   return (
     <StyledLayout className="home">
       <Background src={background} />
@@ -95,7 +96,9 @@ const Home: React.FC = () => {
         title={<HeaderTitle />}
         desc={<HeaderDesc />}
       >
-        <Button>
+        <Button
+          onClick={() => history.push('/about')}
+        >
           더 알아보기
         </Button>
       </AnimatedHeader>
@@ -106,4 +109,4 @@ const Home: React.FC = () => {
   );
 };
 
-export default Home;
+export default withRouter<RouteComponentProps, any>(Home);
