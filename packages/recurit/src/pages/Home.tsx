@@ -86,7 +86,7 @@ const HeaderDesc: React.FC = () => {
   );
 };
 
-export default function Home() {
+const Home: React.FC = () => {
   return (
     <StyledLayout className="home">
       <Background src={background} />
@@ -104,4 +104,6 @@ export default function Home() {
       </LogoContainer>
     </StyledLayout>
   );
-}
+};
+
+export default Home;

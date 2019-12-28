@@ -89,34 +89,34 @@ const Content = styled.div`
   width: 85%;
 `;
 
-export default class DeveloperJob extends React.Component {
-  public render() {
-    return (
-      <Layout className="developer-recurit">
-        <HeaderWrap>
-          <IllustWrap>
-            <IllustContainer>
-              <IllustOverlay />
-              <CrowdIllust left={true} />
-              <CrowdIllust />
-              <LightbulbIllust />
-              <DeveloperIllust />
-            </IllustContainer>
-          </IllustWrap>
-          <StyledHeader
-            title={<HeaderTitle />}
-            desc="열정만 있다면, 최고로 만들어 드리겠습니다."
-          />
-        </HeaderWrap>
-        <Content>
-          <Section
-            title="INU가 만들 개발 문화"
-            desc="모두가 성장할 수 있는 동아리 협업 문화"
-          >
-            <Markdown source={CulturePost} />
-          </Section>
-        </Content>
-      </Layout>
-    );
-  }
-}
+const DeveloperJob: React.FC = () => {
+  return (
+    <Layout className="developer-recurit">
+      <HeaderWrap>
+        <IllustWrap>
+          <IllustContainer>
+            <IllustOverlay />
+            <CrowdIllust left={true} />
+            <CrowdIllust />
+            <LightbulbIllust />
+            <DeveloperIllust />
+          </IllustContainer>
+        </IllustWrap>
+        <StyledHeader
+          title={<HeaderTitle />}
+          desc="열정만 있다면, 최고로 만들어 드리겠습니다."
+        />
+      </HeaderWrap>
+      <Content>
+        <Section
+          title="INU가 만들 개발 문화"
+          desc="모두가 성장할 수 있는 동아리 협업 문화"
+        >
+          <Markdown source={CulturePost} />
+        </Section>
+      </Content>
+    </Layout>
+  );
+};
+
+export default DeveloperJob;

@@ -8,8 +8,13 @@ import {
 import styled from 'styled-components';
 
 import Navbar from './components/Navbar';
-import Home from './pages/Home';
-import { JobDeveloper } from './pages/jobs';
+
+import {
+  About,
+  Course,
+  Home,
+  JobDeveloper,
+} from './pages';
 
 const AppContainer = styled.div`
   display: flex;
@@ -23,7 +28,7 @@ const ContentWrap = styled.div`
   width: calc(100% - 13.5rem);
 `;
 
-export default function App() {
+const App: React.FC = () => {
   return (
     <>
       <Normalize />
@@ -33,6 +38,8 @@ export default function App() {
           <ContentWrap>
             <Switch>
               <Route exact path="/" component={Home} />
+              <Route path="/about" component={About} />
+              <Route path="/course" component={Course} />
               <Route path="/jobs/developer" component={JobDeveloper} />
             </Switch>
           </ContentWrap>
@@ -40,4 +47,6 @@ export default function App() {
       </Router>
     </>
   );
-}
+};
+
+export default App;
