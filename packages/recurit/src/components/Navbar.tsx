@@ -3,6 +3,9 @@ import styled from 'styled-components';
 
 import FontAwesomeIcon from './FontAwesomeIcon';
 
+import name from '../assets/typography/name.png';
+import slogan from '../assets/typography/slogan.png';
+
 const NavbarContainer = styled.div`
   display: flex;
   flex-direction: column;
@@ -19,6 +22,23 @@ const FixedContent = styled.div`
   left: 0;
   height: inherit;
   width: inherit;
+  position: flex;
+  flex-direction: column;
+`;
+
+const Brand = styled.div`
+  display: flex;
+  justify-content: space-between;
+  padding: 1.5rem 1.8rem;
+`;
+
+const Name = styled.img`
+  /* width: 80px; */
+  height: 32px;
+`;
+
+const Slogan = styled.img`
+  height: 32px;
 `;
 
 const NavbarItemContainer = styled.div`
@@ -62,6 +82,10 @@ const NavbarItem: React.FC<INavbarItemProps> = ({ message, iconClassName = '' })
 const Navbar = () => (
   <NavbarContainer>
     <FixedContent>
+      <Brand>
+        <Name src={name} />
+        <Slogan src={slogan} />
+      </Brand>
       <NavbarItem message="알아보기" iconClassName="fas fa-info-circle" />
       <NavbarItem message="모집 공고" iconClassName="fas fa-paper-plane" />
     </FixedContent>
