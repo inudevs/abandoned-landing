@@ -10,6 +10,15 @@ const NavbarContainer = styled.div`
   height: auto;
   width: 13.5rem;
   background-image: linear-gradient(to right, #FDE39F, #FCDC88);
+  position: relative;
+`;
+
+const FixedContent = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: inherit;
+  width: inherit;
 `;
 
 const NavbarItemContainer = styled.div`
@@ -52,8 +61,10 @@ const NavbarItem: React.FC<INavbarItemProps> = ({ message, iconClassName = '' })
 
 const Navbar = () => (
   <NavbarContainer>
-    <NavbarItem message="알아보기" iconClassName="fas fa-info-circle" />
-    <NavbarItem message="모집 공고" iconClassName="fas fa-paper-plane" />
+    <FixedContent>
+      <NavbarItem message="알아보기" iconClassName="fas fa-info-circle" />
+      <NavbarItem message="모집 공고" iconClassName="fas fa-paper-plane" />
+    </FixedContent>
   </NavbarContainer>
 );
 
