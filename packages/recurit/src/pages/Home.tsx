@@ -8,7 +8,7 @@ import Layout from '../components/Layout';
 import PartnerShowcase from '../components/PartnerShowcase';
 
 import {
-  Opacity,
+  OpacityFadeIn,
   SlideInWithSlowerOpacity,
 } from '../components/keyframes';
 
@@ -42,7 +42,7 @@ const Image = styled.img`
 const AnimatedHeader = styled(Header)`
   margin: auto 0;
   opacity: 0%;
-  animation: ${Opacity} 1.2s forwards;
+  animation: ${OpacityFadeIn} 1.2s forwards;
   animation-delay: 1.2s;
 `;
 

@@ -1,9 +1,13 @@
 import { keyframes } from 'styled-components';
 
-const Opacity = keyframes`
+export const OpacityFadeIn = keyframes`
   100% {
     opacity: 100%;
   }
 `;
 
-export default Opacity;
+export const OpacityFadeOut = keyframes`
+  100% {
+    opacity: 0%;
+  }
+`;

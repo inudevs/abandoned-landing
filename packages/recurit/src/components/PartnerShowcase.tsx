@@ -1,6 +1,11 @@
 import * as React from 'react';
 import styled from 'styled-components';
 
+import {
+  OpacityFadeOut,
+  SlideForShowcase,
+} from './keyframes';
+
 import partnerData from '../data/partners.json';
 
 interface IPartner {
@@ -25,20 +30,28 @@ const PartnerLogo: React.FC<PartnerLogoProps> = ({ logo, height, width }) => (
   />
 );
 
+const PartnerSlider: React.FC = () => (
+  <ShowcaseSlider>
+    {partners.map(({ ...logoProps }, idx) => (
+      <PartnerLogo
+        key={`partner-${idx}`}
+        {...logoProps}
+      />
+    ))}
+  </ShowcaseSlider>
+);
+
 const PartnerShowcase: React.FC = () => {
   return (
     <ShowcaseContainer>
       <ShowcaseHeading>
         Together With
       </ShowcaseHeading>
-      <ShowcaseSlider>
-        {partners.map(({ ...logoProps }, idx) => (
-          <PartnerLogo
-            key={`partner-${idx}`}
-            {...logoProps}
-          />
-        ))}
-      </ShowcaseSlider>
+      <SliderWrapper>
+        <PartnerSlider />
+        <PartnerSlider />
+        <PartnerSlider />
+      </SliderWrapper>
     </ShowcaseContainer>
   );
 };
@@ -64,19 +77,50 @@ const ShowcaseContainer = styled.div`
   background: linear-gradient(45deg, #343887, #000457);
   z-index: -2;
   color: white;
-  padding: 0 2rem;
 `;
 
 const ShowcaseHeading = styled.span`
   font-weight: 700;
   font-size: 1.1rem;
   text-transform: uppercase;
-  margin: 0 auto;
-  margin-bottom: 1rem;
+  margin: 1rem auto;
+  margin-top: 1.5rem;
+`;
+
+const SliderWrapper = styled.div`
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding-bottom: 1.5rem;
 `;
 
 const ShowcaseSlider = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  animation: ${SlideForShowcase} 18s linear infinite;
+  white-space: nowrap;
+  overflow: hidden;
+  position: absolute;
+  width: 100%;
+  height: auto;
+
+  &:first-child {
+    animation:
+      ${SlideForShowcase} 18s linear 3s infinite,
+      ${OpacityFadeOut} 2s ease-in-out 1s;
+  }
+
+  &:nth-child(2) {
+    transform: translateX(100%);
+    animation-delay: 9s;
+  }
+
+  &:last-child {
+    transform: translateX(100%);
+    animation-delay: 15s;
+  }
 `;
