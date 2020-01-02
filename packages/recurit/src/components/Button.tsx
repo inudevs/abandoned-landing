@@ -9,7 +9,7 @@ interface IButtonProps {
   onClick?: () => void;
 }
 
-const Button: React.SFC<IButtonProps> =
+const Button: React.FC<IButtonProps> =
   ({ children, color = 'white', bgColor = '#343887', focusColor = '#272b6e', onClick }) => {
     const Container = useMemo(
       () => styled.button`
