@@ -2,17 +2,17 @@ import React from 'react';
 import { RouteComponentProps, withRouter } from 'react-router-dom';
 import styled from 'styled-components';
 
-import FontAwesomeIcon from './FontAwesomeIcon';
+import FontAwesomeIcon from '../atoms/FontAwesomeIcon';
 
 import {
   SlideIn,
   SlideInWithOpacity,
-} from './keyframes';
+} from '../keyframes';
 
 import brandName from '../assets/typography/name.png';
 import brandSlogan from '../assets/typography/slogan.png';
 
-import navbarData from '../data/navbar.json';
+import navbarData from '../../data/navbar.json';
 
 interface INavigation {
   name: string;

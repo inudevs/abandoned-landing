@@ -2,7 +2,7 @@ import * as React from 'react';
 import ReactMarkdown from 'react-markdown';
 import styled from 'styled-components';
 
-import CodeBlock from './CodeBlock';
+import CodeBlock from '../atoms/CodeBlock';
 
 const Container = styled.div`
   color: rgba(0, 0, 0, 0.85);

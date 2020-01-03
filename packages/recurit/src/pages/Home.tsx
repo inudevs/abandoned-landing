@@ -2,10 +2,10 @@ import * as React from 'react';
 import { RouteComponentProps, withRouter } from 'react-router-dom';
 import styled from 'styled-components';
 
-import Button from '../components/Button';
-import Header from '../components/Header';
-import Layout from '../components/Layout';
-import PartnerShowcase from '../components/PartnerShowcase';
+import Button from '../components/atoms/Button';
+import Header from '../components/templates/Header';
+import Layout from '../components/atoms/Layout';
+import PartnerShowcase from '../components/templates/PartnerShowcase';
 
 import {
   OpacityFadeIn,

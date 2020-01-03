@@ -4,9 +4,9 @@ import styled from 'styled-components';
 import {
   OpacityFadeOut,
   SlideForShowcase,
-} from './keyframes';
+} from '../keyframes';
 
-import partnerData from '../data/partners.json';
+import partnerData from '../../data/partners.json';
 
 interface IPartner {
   logo: string;
