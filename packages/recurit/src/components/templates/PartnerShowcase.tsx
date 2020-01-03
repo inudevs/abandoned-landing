@@ -26,7 +26,7 @@ const PartnerLogo: React.FC<PartnerLogoProps> = ({ logo, height, width }) => (
   <ShowcaseLogo
     height={`${height}px`}
     width={`${width}px`}
-    src={require(`../assets/partners/${logo}.png`)}
+    src={require(`../../assets/partners/${logo}.png`)}
   />
 );
 

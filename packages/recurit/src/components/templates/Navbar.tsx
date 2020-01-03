@@ -9,8 +9,8 @@ import {
   SlideInWithOpacity,
 } from '../keyframes';
 
-import brandName from '../assets/typography/name.png';
-import brandSlogan from '../assets/typography/slogan.png';
+import brandName from '../../assets/typography/name.png';
+import brandSlogan from '../../assets/typography/slogan.png';
 
 import navbarData from '../../data/navbar.json';
 
@@ -21,6 +21,50 @@ interface INavigation {
 }
 
 const navigations = navbarData as INavigation[];
+
+interface INavbarItemProps {
+  message: string;
+  iconClassName?: string;
+  onClick?: () => void;
+}
+
+const NavbarItem: React.FC<INavbarItemProps> =
+  ({ message, iconClassName = '', onClick }) => {
+    return (
+      <NavbarItemContainer
+        onClick={onClick}
+      >
+        <FontAwesomeIcon className={iconClassName} />
+        <NavbarItemText>
+          {message}
+        </NavbarItemText>
+      </NavbarItemContainer>
+    );
+  };
+
+const Navbar: React.FC<RouteComponentProps> = ({ history }) => (
+  <NavbarContainer>
+    <FixedContent>
+      <Brand onClick={() => history.push('/')}>
+        <Name src={brandName} />
+        <Slogan src={brandSlogan} />
+      </Brand>
+      {navigations.map((nav: any, idx: number) => {
+        const { name, icon, route } = nav;
+        return (
+          <NavbarItem
+            key={`navigation-${idx}`}
+            message={name}
+            iconClassName={icon}
+            onClick={() => history.push(route)}
+          />
+        );
+      })}
+    </FixedContent>
+  </NavbarContainer>
+);
+
+export default withRouter<RouteComponentProps, any>(Navbar);
 
 const NavbarContainer = styled.div`
   display: flex;
@@ -85,47 +129,3 @@ const NavbarItemText = styled.span`
   margin-left: 0.8rem;
   font-size: 1.2rem;
 `;
-
-interface INavbarItemProps {
-  message: string;
-  iconClassName?: string;
-  onClick?: () => void;
-}
-
-const NavbarItem: React.FC<INavbarItemProps> =
-  ({ message, iconClassName = '', onClick }) => {
-    return (
-      <NavbarItemContainer
-        onClick={onClick}
-      >
-        <FontAwesomeIcon className={iconClassName} />
-        <NavbarItemText>
-          {message}
-        </NavbarItemText>
-      </NavbarItemContainer>
-    );
-  };
-
-const Navbar: React.FC<RouteComponentProps> = ({ history }) => (
-  <NavbarContainer>
-    <FixedContent>
-      <Brand onClick={() => history.push('/')}>
-        <Name src={brandName} />
-        <Slogan src={brandSlogan} />
-      </Brand>
-      {navigations.map((nav: any, idx: number) => {
-        const { name, icon, route } = nav;
-        return (
-          <NavbarItem
-            key={`navigation-${idx}`}
-            message={name}
-            iconClassName={icon}
-            onClick={() => history.push(route)}
-          />
-        );
-      })}
-    </FixedContent>
-  </NavbarContainer>
-);
-
-export default withRouter<RouteComponentProps, any>(Navbar);
