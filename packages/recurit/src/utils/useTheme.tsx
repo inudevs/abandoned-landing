@@ -2,9 +2,9 @@ import { useEffect, useState } from 'react';
 
 export type Theme = 'light' | 'dark';
 
-type UseTheme = () => readonly [Theme, () => void];
+type UseThemeHandler = () => readonly [Theme, () => void];
 
-export const useTheme: UseTheme = () => {
+export const useTheme: UseThemeHandler = () => {
   const [theme, setTheme] = useState<Theme>('light');
 
   const toggleTheme = () => {
