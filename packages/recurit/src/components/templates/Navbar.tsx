@@ -3,11 +3,14 @@ import { RouteComponentProps, withRouter } from 'react-router-dom';
 import styled from 'styled-components';
 
 import FontAwesomeIcon from '../atoms/FontAwesomeIcon';
+import Switch from '../atoms/Switch';
 
 import {
   SlideIn,
   SlideInWithOpacity,
 } from '../keyframes';
+
+import { Theme } from '../../utils/useTheme';
 
 import brandName from '../../assets/typography/name.png';
 import brandSlogan from '../../assets/typography/slogan.png';
@@ -43,10 +46,11 @@ const NavbarItem: React.FC<INavbarItemProps> =
   };
 
 interface INavbar extends RouteComponentProps {
-  onClickToggleTheme?: () => void;
+  theme: Theme;
+  onToggleTheme?: () => void;
 }
 
-const Navbar: React.FC<INavbar> = ({ history }) => (
+const Navbar: React.FC<INavbar> = ({ history, theme, onToggleTheme }) => (
   <NavbarContainer>
     <FixedContent>
       <Brand onClick={() => history.push('/')}>
@@ -65,6 +69,12 @@ const Navbar: React.FC<INavbar> = ({ history }) => (
         );
       })}
     </FixedContent>
+    <SwitchWrap>
+      <Switch
+        isToggled={theme === 'light'}
+        onToggle={onToggleTheme}
+      />
+    </SwitchWrap>
   </NavbarContainer>
 );
 
@@ -88,6 +98,16 @@ const FixedContent = styled.div`
   width: inherit;
   position: flex;
   flex-direction: column;
+`;
+
+const SwitchWrap = styled.div`
+  width: -webkit-fill-available;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  justify-content: flex-end;
+  padding: 1rem 1.25rem;
 `;
 
 const Brand = styled.div`
