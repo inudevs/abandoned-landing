@@ -14,11 +14,6 @@ export const useTheme: UseThemeHandler = () => {
   };
 
   useEffect(
-    () => window.localStorage.setItem('theme', theme),
-    [theme],
-  );
-
-  useEffect(
     () => {
       const localTheme = window.localStorage.getItem('theme') as Theme;
       if (localTheme) {
@@ -26,6 +21,11 @@ export const useTheme: UseThemeHandler = () => {
       }
     },
     [],
+  );
+
+  useEffect(
+    () => window.localStorage.setItem('theme', theme),
+    [theme],
   );
 
   return [theme, toggleTheme];
