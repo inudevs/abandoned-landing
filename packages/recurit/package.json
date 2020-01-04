@@ -32,7 +32,8 @@
     "react-scripts": "^3.3.0",
     "react-syntax-highlighter": "^12.2.1",
     "react-text-loop": "^2.3.0",
-    "styled-components": "^4.4.1"
+    "styled-components": "^4.4.1",
+    "styled-theming": "^2.2.0"
   },
   "devDependencies": {
     "@types/jest": "^24.0.21",
@@ -43,6 +44,7 @@
     "@types/react-router-dom": "^5.1.2",
     "@types/react-syntax-highlighter": "^11.0.3",
     "@types/styled-components": "^4.1.20",
+    "@types/styled-theming": "^2.2.2",
     "gh-pages": "^2.1.1"
   }
 }
