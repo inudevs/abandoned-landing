@@ -1,9 +1,14 @@
 import * as React from 'react';
 import { RouteComponentProps, withRouter } from 'react-router-dom';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
+import theme from 'styled-theming';
 
 import Button from '../components/atoms/Button';
 import Layout from '../components/atoms/Layout';
+import {
+  TextForParagraph,
+  TextForTitle,
+} from '../components/atoms/Text';
 import Header from '../components/templates/Header';
 import PartnerShowcase from '../components/templates/PartnerShowcase';
 
@@ -15,16 +20,83 @@ import {
 import background from '../assets/illusts/background-1.png';
 import illust from '../assets/illusts/inu-2020.png';
 
+const HeaderTitle: React.FC = () => {
+  return (
+    <TextForTitle>
+      INU와 함께
+      <br />
+      새로운 역사를
+      <br />
+      만들어 나갈 사람을
+      <br />
+      찾습니다.
+    </TextForTitle>
+  );
+};
+
+const HeaderDesc: React.FC = () => {
+  return (
+    <TextForParagraph>
+      2020년, 처음으로 시작합니다.
+      <br />
+      디미고에서의 시간을 누구보다 의미있게 보내고 싶은 사람을 원합니다.
+    </TextForParagraph>
+  );
+};
+
+const Home: React.FC<RouteComponentProps> = ({ history }) => {
+  return (
+    <StyledLayout className="home">
+      <BackgroundLayer />
+      <BackgroundImage src={background} />
+      <Image src={illust} />
+      <AnimatedHeader
+        title={<HeaderTitle />}
+        desc={<HeaderDesc />}
+      >
+        <Button
+          onClick={() => history.push('/about')}
+        >
+          더 알아보기
+        </Button>
+      </AnimatedHeader>
+      <PartnerShowcase />
+    </StyledLayout>
+  );
+};
+
+export default withRouter<RouteComponentProps, any>(Home);
+
 const StyledLayout = styled(Layout)`
   height: 100vh;
 `;
 
-const Background = styled.img`
+const BackgroundLayer = styled.div`
+  background: ${theme('mode', {
+    dark: '#020735',
+    light: 'transparent',
+  })};
+  width: 100%;
+  height: 100%;
+  z-index: -3;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+`;
+
+const BackgroundImage = styled.img`
   position: absolute;
   top: 0;
   right: 0;
   z-index: -2;
   height: 100%;
+  ${theme('mode', {
+    dark: css`
+      filter: invert(1);
+    `,
+  })};
 `;
 
 const Image = styled.img`
@@ -45,49 +117,3 @@ const AnimatedHeader = styled(Header)`
   animation: ${OpacityFadeIn} 1.2s forwards;
   animation-delay: 1.2s;
 `;
-
-const HeaderTitle: React.FC = () => {
-  return (
-    <span>
-      INU와 함께
-      <br />
-      새로운 역사를
-      <br />
-      만들어 나갈 사람을
-      <br />
-      찾습니다.
-    </span>
-  );
-};
-
-const HeaderDesc: React.FC = () => {
-  return (
-    <span>
-      2020년, 처음으로 시작합니다.
-      <br />
-      디미고에서의 시간을 누구보다 의미있게 보내고 싶은 사람을 원합니다.
-    </span>
-  );
-};
-
-const Home: React.FC<RouteComponentProps> = ({ history }) => {
-  return (
-    <StyledLayout className="home">
-      <Background src={background} />
-      <Image src={illust} />
-      <AnimatedHeader
-        title={<HeaderTitle />}
-        desc={<HeaderDesc />}
-      >
-        <Button
-          onClick={() => history.push('/about')}
-        >
-          더 알아보기
-        </Button>
-      </AnimatedHeader>
-      <PartnerShowcase />
-    </StyledLayout>
-  );
-};
-
-export default withRouter<RouteComponentProps, any>(Home);
