@@ -1,10 +1,10 @@
 import * as React from 'react';
 
-import Layout from '../components/atoms/Layout';
+import LayoutWithTheme from '../components/molecules/LayoutWithTheme';
 
 const About: React.FC = () => {
   return (
-    <Layout />
+    <LayoutWithTheme />
   );
 };
 

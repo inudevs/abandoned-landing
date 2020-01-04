@@ -13,10 +13,11 @@ import {
   About,
   Course,
   Home,
+  Job,
   JobDeveloper,
 } from './pages';
 
-import { useTheme } from './utils/useTheme';
+import useTheme from './utils/useTheme';
 
 const AppContainer = styled.div`
   display: flex;
@@ -48,9 +49,10 @@ const App: React.FC = () => {
             <ContentWrap>
               <Switch>
                 <Route exact path="/" component={Home} />
-                <Route path="/about" component={About} />
-                <Route path="/course" component={Course} />
-                <Route path="/jobs/developer" component={JobDeveloper} />
+                <Route exact path="/about" component={About} />
+                <Route exact path="/course" component={Course} />
+                <Route exact path="/job" component={Job} />
+                <Route path="/job/developer" component={JobDeveloper} />
               </Switch>
             </ContentWrap>
           </ThemeProvider>

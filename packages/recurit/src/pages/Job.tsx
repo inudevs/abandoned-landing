@@ -2,10 +2,10 @@ import * as React from 'react';
 
 import LayoutWithTheme from '../components/molecules/LayoutWithTheme';
 
-const Course: React.FC = () => {
+const Job: React.FC = () => {
   return (
     <LayoutWithTheme />
   );
 };
 
-export default Course;
+export default Job;

@@ -7,7 +7,7 @@
   {
     "name": "모집공고",
     "icon": "fas fa-paper-plane",
-    "route": "/jobs"
+    "route": "/job"
   },
   {
     "name": "커리큘럼",

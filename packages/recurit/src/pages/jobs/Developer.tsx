@@ -3,7 +3,7 @@ import React, { Fragment } from 'react';
 import TextLoop from 'react-text-loop';
 import styled from 'styled-components';
 
-import Layout from '../../components/atoms/Layout';
+import LayoutWithTheme from '../../components/molecules/LayoutWithTheme';
 import Markdown from '../../components/molecules/Markdown';
 import Section from '../../components/molecules/Section';
 import Header from '../../components/templates/Header';
@@ -91,7 +91,7 @@ const Content = styled.div`
 
 const DeveloperJob: React.FC = () => {
   return (
-    <Layout className="developer-recurit">
+    <LayoutWithTheme className="developer-recurit">
       <HeaderWrap>
         <IllustWrap>
           <IllustContainer>
@@ -115,7 +115,7 @@ const DeveloperJob: React.FC = () => {
           <Markdown source={CulturePost} />
         </Section>
       </Content>
-    </Layout>
+    </LayoutWithTheme>
   );
 };
 
