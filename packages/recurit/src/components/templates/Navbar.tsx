@@ -37,7 +37,9 @@ const NavbarItem: React.FC<INavbarItemProps> =
       <NavbarItemContainer
         onClick={onClick}
       >
-        <FontAwesomeIcon className={iconClassName} />
+        <FontAwesomeIcon
+          icon={iconClassName}
+        />
         <NavbarItemText>
           {message}
         </NavbarItemText>
