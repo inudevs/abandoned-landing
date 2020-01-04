@@ -2,6 +2,10 @@ import * as React from 'react';
 import styled from 'styled-components';
 
 import Separator from '../atoms/Separator';
+import {
+  TextForParagraph,
+  TextForTitle,
+} from '../atoms/Text';
 
 type HeaderProps = {
   className?: string,
@@ -10,18 +14,26 @@ type HeaderProps = {
   children?: React.ReactNode,
 };
 
+const ConditionallyWrapTitle: React.FC = ({ children }) =>
+  React.isValidElement(children) ?
+    children : <TextForTitle>{children}</TextForTitle>;
+
+const ConditionallyWrapDesc: React.FC = ({ children }) =>
+  React.isValidElement(children) ?
+    children : <TextForParagraph>{children}</TextForParagraph>;
+
 const Header: React.FC<HeaderProps> = ({
   className = '', title = '', desc = '', children,
 }) => {
   return (
     <Container className={className}>
-      <Title>
+      <ConditionallyWrapTitle>
         {title}
-      </Title>
+      </ConditionallyWrapTitle>
       <Separator />
-      <Description>
+      <ConditionallyWrapDesc>
         {desc}
-      </Description>
+      </ConditionallyWrapDesc>
       {children}
     </Container>
   );
@@ -36,16 +48,4 @@ const Container = styled.header`
   display: flex;
   flex-direction: column;
   justify-content: center;
-`;
-
-const Title = styled.h1`
-  color: #000457;
-  font-size: 3.1rem;
-  font-weight: 700;
-`;
-
-const Description = styled.p`
-  color: #343887;
-  font-weight: 600;
-  font-size: 1.2rem;
 `;
