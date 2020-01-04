@@ -22,6 +22,7 @@
     ]
   },
   "dependencies": {
+    "@loadable/component": "^5.11.0",
     "raw.macro": "^0.3.0",
     "react": "^16.8.6",
     "react-dom": "^16.11.0",
@@ -35,6 +36,7 @@
   },
   "devDependencies": {
     "@types/jest": "^24.0.21",
+    "@types/loadable__component": "^5.10.0",
     "@types/node": "^12.12.5",
     "@types/react": "^16.9.11",
     "@types/react-dom": "^16.9.3",
