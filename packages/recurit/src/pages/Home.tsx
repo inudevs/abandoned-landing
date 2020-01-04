@@ -3,8 +3,8 @@ import { RouteComponentProps, withRouter } from 'react-router-dom';
 import styled from 'styled-components';
 
 import Button from '../components/atoms/Button';
-import Header from '../components/templates/Header';
 import Layout from '../components/atoms/Layout';
+import Header from '../components/templates/Header';
 import PartnerShowcase from '../components/templates/PartnerShowcase';
 
 import {

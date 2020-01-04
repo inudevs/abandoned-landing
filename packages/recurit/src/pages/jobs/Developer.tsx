@@ -3,10 +3,10 @@ import React, { Fragment } from 'react';
 import TextLoop from 'react-text-loop';
 import styled from 'styled-components';
 
-import Header from '../../components/templates/Header';
 import Layout from '../../components/atoms/Layout';
 import Markdown from '../../components/molecules/Markdown';
 import Section from '../../components/molecules/Section';
+import Header from '../../components/templates/Header';
 
 import {
   CrowdIllust,

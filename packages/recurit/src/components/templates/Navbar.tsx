@@ -42,7 +42,11 @@ const NavbarItem: React.FC<INavbarItemProps> =
     );
   };
 
-const Navbar: React.FC<RouteComponentProps> = ({ history }) => (
+interface INavbar extends RouteComponentProps {
+  onClickToggleTheme?: () => void;
+}
+
+const Navbar: React.FC<INavbar> = ({ history }) => (
   <NavbarContainer>
     <FixedContent>
       <Brand onClick={() => history.push('/')}>
@@ -64,7 +68,7 @@ const Navbar: React.FC<RouteComponentProps> = ({ history }) => (
   </NavbarContainer>
 );
 
-export default withRouter<RouteComponentProps, any>(Navbar);
+export default withRouter<INavbar, any>(Navbar);
 
 const NavbarContainer = styled.div`
   display: flex;
