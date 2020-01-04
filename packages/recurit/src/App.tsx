@@ -39,7 +39,8 @@ const App: React.FC = () => {
       <Router>
         <AppContainer>
           <Navbar
-            onClickToggleTheme={toggleTheme}
+            theme={theme}
+            onToggleTheme={toggleTheme}
           />
           <ThemeProvider
             theme={{ mode: theme }}
