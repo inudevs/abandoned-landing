@@ -1,11 +1,12 @@
 import * as React from 'react';
 
 type IconProps = {
-  className: string;
+  className?: string;
+  icon: string;
 };
 
-const FontAwesomeIcon: React.FC<IconProps> = ({ className }) => (
-  <i className={className} />
+const FontAwesomeIcon: React.FC<IconProps> = ({ className = '', icon }) => (
+  <i className={`${icon} ${className}`} />
 );
 
 export default FontAwesomeIcon;
