@@ -7,6 +7,8 @@ import {
   TextForTitle,
 } from '../atoms/Text';
 
+import ConditionalWrap, { IConditionalWrap } from '../../utils/ConditionalWrap';
+
 type HeaderProps = {
   className?: string,
   title?: React.ReactNode,
@@ -14,13 +16,17 @@ type HeaderProps = {
   children?: React.ReactNode,
 };
 
-const ConditionallyWrapTitle: React.FC = ({ children }) =>
-  React.isValidElement(children) ?
-    children : <TextForTitle>{children}</TextForTitle>;
+const ConditionallyWrapTitle: React.FC<IConditionalWrap> = ({ children }) =>
+  <ConditionalWrap
+    children={children}
+    component={TextForTitle}
+  />;
 
-const ConditionallyWrapDesc: React.FC = ({ children }) =>
-  React.isValidElement(children) ?
-    children : <TextForParagraph>{children}</TextForParagraph>;
+const ConditionallyWrapDesc: React.FC<IConditionalWrap> = ({ children }) =>
+  <ConditionalWrap
+    children={children}
+    component={TextForParagraph}
+  />;
 
 const Header: React.FC<HeaderProps> = ({
   className = '', title = '', desc = '', children,
