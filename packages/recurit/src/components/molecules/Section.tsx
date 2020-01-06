@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
+import theme from 'styled-theming';
 
 type SectionProps = {
   children: React.ReactNode,
@@ -36,7 +37,10 @@ const Container = styled.div`
 `;
 
 const Title = styled.h1`
-  color: #000457;
+  color: ${theme('mode', {
+    dark: '#fff',
+    light: '#000457',
+  })};
   cursor: pointer;
   margin: 0;
   margin-bottom: 0.25rem;
@@ -46,10 +50,16 @@ const Desc = styled.h2`
   margin: 0;
   font-size: 1.2rem;
   font-weight: 500;
-  color: #343887;
+  color: ${theme('mode', {
+    dark: 'rgba(255, 255, 255, 0.85)',
+    light: '#343887',
+  })};
 `;
 
 const Arrow = styled.i`
   margin-right: 1rem;
-  color: #000457;
+  color: ${theme('mode', {
+    dark: '#fff',
+    light: '#000457',
+  })};
 `;

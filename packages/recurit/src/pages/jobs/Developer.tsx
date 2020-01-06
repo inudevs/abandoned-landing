@@ -2,6 +2,7 @@ import raw from 'raw.macro';
 import React, { Fragment } from 'react';
 import TextLoop from 'react-text-loop';
 import styled from 'styled-components';
+import theme from 'styled-theming';
 
 import { TextForTitle } from '../../components/atoms/Text';
 import LayoutWithTheme from '../../components/molecules/LayoutWithTheme';
@@ -21,7 +22,12 @@ const CulturePost = raw('../../data/developer/culture.md');
 const HeaderWrap = styled.div`
   height: 60vh;
   position: relative;
-  box-shadow: 0px 7px 36px -8px rgba(227, 227, 227, 1);
+  box-shadow:
+    0px 7px 36px -8px
+    ${theme('mode', {
+      dark: 'black',
+      light: 'rgba(227, 227, 227, 1)',
+    })};
 `;
 
 const IllustWrap = styled.div`
@@ -50,8 +56,10 @@ const IllustOverlay = styled.div`
   background-image: linear-gradient(
     to bottom,
     transparent 70%,
-    rgba(256,256,256,0.5),
-    #fff
+    ${theme('mode', {
+      dark: 'rgba(27, 30, 51, 0.5), #1b1e33',
+      light: 'rgba(256, 256, 256, 0.5), #fff',
+    })}
   );
   z-index: 1;
 `;
