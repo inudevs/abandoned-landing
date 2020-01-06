@@ -3,6 +3,7 @@ import React, { Fragment } from 'react';
 import TextLoop from 'react-text-loop';
 import styled from 'styled-components';
 
+import { TextForTitle } from '../../components/atoms/Text';
 import LayoutWithTheme from '../../components/molecules/LayoutWithTheme';
 import Markdown from '../../components/molecules/Markdown';
 import Section from '../../components/molecules/Section';
@@ -63,7 +64,7 @@ const StyledHeader = styled(Header)`
 
 const HeaderTitle: React.FC = () => {
   return (
-    <span>
+    <TextForTitle>
       <TextLoop
         interval={1800}
         springConfig={{ stiffness: 200, damping: 32 }}
@@ -80,7 +81,7 @@ const HeaderTitle: React.FC = () => {
       </TextLoop>
       <br />
       개발자를 꿈꾼다면.
-    </span>
+    </TextForTitle>
   );
 };
 
