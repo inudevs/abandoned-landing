@@ -1,3 +1,4 @@
+import media from 'css-in-js-media';
 import React from 'react';
 import { RouteComponentProps, withRouter } from 'react-router-dom';
 import styled from 'styled-components';
@@ -90,6 +91,13 @@ const NavbarContainer = styled.div`
   width: 13.5rem;
   background-image: linear-gradient(to right, #FDE39F, #FCDC88);
   position: relative;
+
+  ${media('<=tablet')} {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
 `;
 
 const FixedContent = styled.div`
@@ -100,6 +108,10 @@ const FixedContent = styled.div`
   width: inherit;
   position: flex;
   flex-direction: column;
+
+  ${media('<=tablet')} {
+    position: unset;
+  }
 `;
 
 const SwitchWrap = styled.div`
@@ -110,6 +122,14 @@ const SwitchWrap = styled.div`
   display: flex;
   justify-content: flex-end;
   padding: 0;
+
+  ${media('<=tablet')} {
+    position: unset;
+    width: fit-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 `;
 
 const StyledSwitch = styled(Switch)`
@@ -121,6 +141,10 @@ const Brand = styled.div`
   justify-content: space-between;
   padding: 1.5rem 1.8rem;
   cursor: pointer;
+
+  ${media('<=tablet')} {
+    width: fit-content;
+  }
 `;
 
 const Name = styled.img`
@@ -152,6 +176,10 @@ const NavbarItemContainer = styled.div`
   &:hover,
   &.selected {
     background-color: rgba(239, 192, 56, 0.47);
+  }
+
+  ${media('<=tablet')} {
+    display: none;
   }
 `;
 

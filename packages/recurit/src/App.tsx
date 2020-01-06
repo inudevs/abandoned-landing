@@ -1,3 +1,4 @@
+import media from 'css-in-js-media';
 import React from 'react';
 import Normalize from 'react-normalize';
 import {
@@ -18,18 +19,6 @@ import {
 } from './pages';
 
 import useTheme from './utils/useTheme';
-
-const AppContainer = styled.div`
-  display: flex;
-  height: auto;
-  min-height: 100vh;
-`;
-
-const ContentWrap = styled.div`
-  display: flex;
-  flex: 1 1;
-  width: calc(100% - 13.5rem);
-`;
 
 const App: React.FC = () => {
   const [theme, toggleTheme] = useTheme();
@@ -63,3 +52,23 @@ const App: React.FC = () => {
 };
 
 export default App;
+
+const AppContainer = styled.div`
+  display: flex;
+  height: auto;
+  min-height: 100vh;
+
+  ${media('<=tablet')} {
+    flex-direction: column;
+  }
+`;
+
+const ContentWrap = styled.div`
+  display: flex;
+  flex: 1 1;
+  width: calc(100% - 13.5rem);
+
+  ${media('<=tablet')} {
+    width: 100%;
+  }
+`;

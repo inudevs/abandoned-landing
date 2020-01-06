@@ -1,3 +1,4 @@
+import media from 'css-in-js-media';
 import * as React from 'react';
 import { RouteComponentProps, withRouter } from 'react-router-dom';
 import styled, { css } from 'styled-components';
@@ -69,6 +70,10 @@ export default withRouter<RouteComponentProps, any>(Home);
 
 const StyledLayout = styled(Layout)`
   height: 100vh;
+
+  ${media('<=tablet')} {
+    height: auto;
+  }
 `;
 
 const BackgroundLayer = styled.div`
@@ -109,6 +114,12 @@ const Image = styled.img`
   animation: ${SlideInWithSlowerOpacity} 0.8s forwards;
   animation-delay: 0.5s;
   opacity: 0.65;
+
+  ${media('<=tablet')} {
+    width: 45rem;
+    top: 110px;
+    right: -170px;
+  }
 `;
 
 const AnimatedHeader = styled(Header)`

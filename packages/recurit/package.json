@@ -23,6 +23,7 @@
   },
   "dependencies": {
     "@loadable/component": "^5.11.0",
+    "css-in-js-media": "^1.0.7",
     "raw.macro": "^0.3.0",
     "react": "^16.8.6",
     "react-dom": "^16.11.0",

@@ -5117,6 +5117,11 @@ css-has-pseudo@^0.10.0:
     postcss "^7.0.6"
     postcss-selector-parser "^5.0.0-rc.4"
 
+css-in-js-media@^1.0.7:
+  version "1.0.7"
+  resolved "https://registry.yarnpkg.com/css-in-js-media/-/css-in-js-media-1.0.7.tgz#34e0209a8cae21b77a5e95af3f35652a26e47ea1"
+  integrity sha512-ifz/0OJ50b86MEuvFdmFoqEF0wOrIeAfZuTSglhGRe7KTCqrKYOIs52hJkXalEQjp5aqy9p9bTy0KS9yRuz0oA==
+
 css-loader@3.2.0:
   version "3.2.0"
   resolved "https://registry.yarnpkg.com/css-loader/-/css-loader-3.2.0.tgz#bb570d89c194f763627fcf1f80059c6832d009b2"
