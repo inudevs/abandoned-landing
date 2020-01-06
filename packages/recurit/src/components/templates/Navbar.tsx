@@ -72,7 +72,7 @@ const Navbar: React.FC<INavbar> = ({ history, theme, onToggleTheme }) => (
       })}
     </FixedContent>
     <SwitchWrap>
-      <Switch
+      <StyledSwitch
         isToggled={theme === 'light'}
         onToggle={onToggleTheme}
       />
@@ -103,13 +103,17 @@ const FixedContent = styled.div`
 `;
 
 const SwitchWrap = styled.div`
-  width: -webkit-fill-available;
-  position: absolute;
+  width: inherit;
+  position: fixed;
   bottom: 0;
   left: 0;
   display: flex;
   justify-content: flex-end;
-  padding: 1rem 1.25rem;
+  padding: 0;
+`;
+
+const StyledSwitch = styled(Switch)`
+  margin: 1rem 1.25rem;
 `;
 
 const Brand = styled.div`
