@@ -2,11 +2,11 @@ export type ScrollmagicEvent = {
   progress: number;
   state: string;
   scrollDirection: string
-  type?: String;
+  type?: string;
   currentTarget: {
     $super: object;
     target: {
-      $super: object
+      $super: object,
     };
     namespace: string;
     timestamp: number;

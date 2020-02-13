@@ -29,6 +29,7 @@
     "react-dom": "^16.11.0",
     "react-markdown": "^4.2.2",
     "react-normalize": "^0.4.3",
+    "react-page-scroller": "^2.0.6-beta",
     "react-router-dom": "^5.1.2",
     "react-scripts": "^3.3.0",
     "react-scrollmagic": "^2.1.1",
