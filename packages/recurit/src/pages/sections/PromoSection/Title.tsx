@@ -1,5 +1,7 @@
 import * as React from 'react';
 import { animated } from 'react-spring';
+import styled from 'styled-components';
+
 import { TextForTitle } from '../../../components/atoms/Text';
 
 type TitleProps = {
@@ -26,4 +28,6 @@ const Title: React.FC<TitleProps> = ({
 
 export default Title;
 
-const AnimatedTitle = animated(TextForTitle);
+const AnimatedTitle = animated(styled(TextForTitle)`
+  text-shadow: rgba(0, 0, 0, 0.28) 0px 1px 9px;
+`);

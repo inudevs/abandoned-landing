@@ -16,6 +16,8 @@ export const TextForTitle = styled.h1`
   })};
   font-size: 3.1rem;
   font-weight: 700;
+  word-break: keep-all;
+  letter-spacing: -0.5px;
 `;
 
 export const TextForParagraph = styled.p`
