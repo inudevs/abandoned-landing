@@ -1,6 +1,7 @@
 import media from 'css-in-js-media';
 import * as React from 'react';
 import { RouteComponentProps, withRouter } from 'react-router-dom';
+import { animated, useSpring } from 'react-spring';
 import styled, { css } from 'styled-components';
 import theme from 'styled-theming';
 
@@ -20,6 +21,9 @@ import {
 
 import background from '../assets/illusts/background-1.png';
 import illust from '../assets/illusts/inu-2020.png';
+
+const calc = (x: number, y: number) => [x - window.innerWidth / 2, y - window.innerHeight / 2];
+const transform = (x: number, y: number) => `translate3d(${x / 10}px,${y / 10}px,0)`;
 
 const HeaderTitle: React.FC = () => {
   return (
@@ -46,22 +50,33 @@ const HeaderDesc: React.FC = () => {
 };
 
 const Home: React.FC<RouteComponentProps> = ({ history }) => {
+  const [spring, set] = useSpring(() => ({
+    config: { mass: 10, tension: 550, friction: 140 },
+    xy: [0, 0],
+  }));
   return (
     <StyledLayout className="home">
-      <BackgroundLayer />
-      <BackgroundImage src={background} />
-      <Image src={illust} />
-      <AnimatedHeader
-        title={<HeaderTitle />}
-        desc={<HeaderDesc />}
-      >
-        <Button
-          onClick={() => history.push('/about')}
-        >
-          더 알아보기
-        </Button>
-      </AnimatedHeader>
-      <PartnerShowcase />
+      <div onMouseMove={({ clientX: x, clientY: y }) => set({ xy: calc(x, y) })}>
+        <BackgroundLayer />
+        <BackgroundImage src={background} />
+        <animated.div
+          // @ts-ignore
+          style={{ transform: spring.xy.interpolate(transform) }}
+          >
+          <Image src={illust} />
+        </animated.div>
+        <AnimatedHeader
+          title={<HeaderTitle />}
+          desc={<HeaderDesc />}
+          >
+          <Button
+            onClick={() => history.push('/about')}
+            >
+            더 알아보기
+          </Button>
+        </AnimatedHeader>
+        <PartnerShowcase />
+      </div>
     </StyledLayout>
   );
 };
