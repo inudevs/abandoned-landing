@@ -12,10 +12,13 @@ import PromoSection from './sections/PromoSection';
 const Home: React.FC<RouteComponentProps> = ({ history }) => {
   const [page, setPage] = useState<number>(0);
 
+  const onChangePage = (idx: number) =>
+    (idx > 0 && idx < 3) ? setPage(idx) : null;
+
   return (
     <StyledLayout className="home">
       <ReactPageScroller
-        pageOnChange={(idx: number) => setPage(idx)}
+        pageOnChange={onChangePage}
         customPageNumber={page}
       >
         <Section>
