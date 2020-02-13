@@ -1,6 +1,7 @@
 import media from 'css-in-js-media';
 import React, { useState } from 'react';
 import { RouteComponentProps, withRouter } from 'react-router-dom';
+import { Controller, Scene } from 'react-scrollmagic';
 import { animated, useSpring } from 'react-spring';
 import styled, { css } from 'styled-components';
 import theme from 'styled-theming';
@@ -17,6 +18,7 @@ import PartnerShowcase from '../components/templates/PartnerShowcase';
 import {
   OpacityFadeIn,
 } from '../components/keyframes';
+import { ScrollmagicEvent } from '../types/event';
 
 import background from '../assets/illusts/background-1.png';
 import illust from '../assets/illusts/inu-2020.png';
@@ -48,23 +50,30 @@ const HeaderDesc: React.FC = () => {
   );
 };
 
+const startImageSpring = () => ({
+  from: {
+    delay: 500,
+    opacity: 0,
+    transform: 'translateX(100%)',
+  },
+  to: {
+    delay: 500,
+    opacity: 1,
+    transform: 'translateX(0%)',
+  },
+});
+
 const Home: React.FC<RouteComponentProps> = ({ history }) => {
-  const [spring, set] = useSpring(() => ({
+  const [parallexSpring, setParallexSpring] = useSpring(() => ({
     config: { mass: 10, tension: 550, friction: 140 },
     xy: [0, 0],
   }));
-  const imageSpring = useSpring({
-    from: {
-      delay: 500,
-      opacity: 0,
-      transform: 'translateX(100%)',
-    },
-    to: {
-      delay: 500,
-      opacity: 1,
-      transform: 'translateX(0%)',
-    },
-  });
+
+  const [imageSpring, setImageSpring] = useSpring(() => ({
+    delay: 0,
+    opacity: 0,
+    transform: 'translateX(100%)',
+  }));
 
   return (
     <StyledLayout className="home">
@@ -75,27 +84,49 @@ const Home: React.FC<RouteComponentProps> = ({ history }) => {
           이누.<br />
         </h1>
       </Section>
-      <PromoSection onMouseMove={({ clientX: x, clientY: y }) => set({ xy: calc(x, y) })}>
-        <BackgroundLayer />
-        <BackgroundImage
-          src={background}
-        />
-        <animated.div
-          // @ts-ignore
-          style={{ transform: spring.xy.interpolate(transform) }}
-        >
-          <Image src={illust} style={imageSpring} />
-        </animated.div>
-        <AnimatedHeader
-          title={<HeaderTitle />}
-          desc={<HeaderDesc />}
-        >
-          <Button
-            onClick={() => history.push('/about')}
+      <PromoSection
+        id="trigger"
+        onMouseMove={({ clientX: x, clientY: y }) => setParallexSpring({ xy: calc(x, y) })}
+      >
+        <Controller>
+          <Scene
+            duration={200}
+            classToggle="zap"
+            triggerElement="#trigger"
+            indicators={true}
           >
-            더 알아보기
-          </Button>
-        </AnimatedHeader>
+            {(_: number, event: ScrollmagicEvent) => {
+              if (event.type === 'start') {
+                // @ts-ignore
+                setImageSpring(startImageSpring);
+              }
+              return (
+                <>
+                  <BackgroundLayer />
+                  <BackgroundImage
+                    src={background}
+                  />
+                  <animated.div
+                    // @ts-ignore
+                    style={{ transform: parallexSpring.xy.interpolate(transform) }}
+                  >
+                    <Image src={illust} style={imageSpring} />
+                  </animated.div>
+                  <AnimatedHeader
+                    title={<HeaderTitle />}
+                    desc={<HeaderDesc />}
+                  >
+                    <Button
+                      onClick={() => history.push('/about')}
+                    >
+                      더 알아보기
+                    </Button>
+                  </AnimatedHeader>
+                </>
+              );
+            }}
+          </Scene>
+        </Controller>
       </PromoSection>
       <Section>
         <PartnerShowcase />
