@@ -8,7 +8,7 @@ import {
 } from 'react-router-dom';
 import styled, { ThemeProvider } from 'styled-components';
 
-import Navbar from './components/templates/Navbar';
+// import Navbar from './components/templates/Navbar';
 
 import {
   About,
