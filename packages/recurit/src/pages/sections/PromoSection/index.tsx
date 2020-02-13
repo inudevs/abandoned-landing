@@ -4,7 +4,6 @@ import { config, useSpring } from 'react-spring';
 import styled from 'styled-components';
 
 import Section from '../../../components/atoms/Section';
-
 import Content from './Content';
 
 import { ScrollmagicEvent } from '../../../types/event';
@@ -58,6 +57,8 @@ const PromoSection: React.FC = () => {
     transform: 'translateY(200px)',
   }));
 
+  // const promoSectionRef = useRef<HTMLElement>(null);
+
   const onMouseMove = ({ clientX: x, clientY: y }: ClientPosition): void =>
     setParallexSpring({ xy: calc(x, y) });
 
@@ -66,10 +67,14 @@ const PromoSection: React.FC = () => {
       id="promo"
       onMouseMove={onMouseMove}
     >
+      <Content
+        parallexSpring={parallexSpring}
+        imageSpring={imageSpring}
+        headerSpring={headerSpring}
+      />
       <Controller>
         <Scene
           duration={800}
-          classToggle="zap"
           triggerElement="#promo"
           // indicators={true}
         >
@@ -81,11 +86,8 @@ const PromoSection: React.FC = () => {
               setHeaderSpring(startHeaderSpring);
             }
             return (
-              <Content
-                parallexSpring={parallexSpring}
-                imageSpring={imageSpring}
-                headerSpring={headerSpring}
-              />
+              // dummy reactchild
+              <React.Fragment />
             );
           }}
         </Scene>
