@@ -25,10 +25,12 @@ const transform = {
     `translate3d(${x / 36}px, ${y / 36}px, 0)`,
 };
 
+type SpringElement = AnimatedValue<ForwardedProps<any>>;
+
 type ContentProps = {
-  parallexSpring: AnimatedValue<ForwardedProps<any>>;
-  imageSpring: AnimatedValue<ForwardedProps<any>>;
-  headerSpring: AnimatedValue<ForwardedProps<any>>;
+  parallexSpring: SpringElement;
+  imageSpring: SpringElement;
+  headerSpring: SpringElement;
 };
 
 const Content: React.FC<ContentProps & RouteComponentProps> = ({
