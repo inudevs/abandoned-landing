@@ -57,8 +57,6 @@ const PromoSection: React.FC = () => {
     transform: 'translateY(200px)',
   }));
 
-  // const promoSectionRef = useRef<HTMLElement>(null);
-
   const onMouseMove = ({ clientX: x, clientY: y }: ClientPosition): void =>
     setParallexSpring({ xy: calc(x, y) });
 
@@ -76,7 +74,6 @@ const PromoSection: React.FC = () => {
         <Scene
           duration={800}
           triggerElement="#promo"
-          // indicators={true}
         >
           {(_: number, event: ScrollmagicEvent) => {
             if (event.type === 'start') {
