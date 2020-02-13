@@ -1,6 +1,6 @@
 import * as React from 'react';
-import TextLoop from 'react-text-loop';
 import { animated } from 'react-spring';
+import TextLoop from 'react-text-loop';
 import styled from 'styled-components';
 
 import { TextForParagraph } from '../../../components/atoms/Text';
@@ -50,7 +50,9 @@ const TextLoopItem = styled.span`
   color: white;
 `;
 
-const AnimatedParagraph = animated(styled(TextForParagraph)`
+const TextForParagraphWithDiv = TextForParagraph.withComponent('div');
+
+const AnimatedParagraph = animated(styled(TextForParagraphWithDiv)`
   /* color: rgba(255, 255, 255, 0.45); */
   text-shadow: rgba(0, 0, 0, 0.28) 0px 1px 9px;
 `);
