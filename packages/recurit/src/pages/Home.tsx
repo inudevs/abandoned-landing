@@ -1,5 +1,5 @@
 import media from 'css-in-js-media';
-import * as React from 'react';
+import React, { useState } from 'react';
 import { RouteComponentProps, withRouter } from 'react-router-dom';
 import { animated, useSpring } from 'react-spring';
 import styled, { css } from 'styled-components';
@@ -16,7 +16,6 @@ import PartnerShowcase from '../components/templates/PartnerShowcase';
 
 import {
   OpacityFadeIn,
-  SlideInWithSlowerOpacity,
 } from '../components/keyframes';
 
 import background from '../assets/illusts/background-1.png';
@@ -54,6 +53,19 @@ const Home: React.FC<RouteComponentProps> = ({ history }) => {
     config: { mass: 10, tension: 550, friction: 140 },
     xy: [0, 0],
   }));
+  const imageSpring = useSpring({
+    from: {
+      delay: 500,
+      opacity: 0,
+      transform: 'translateX(100%)',
+    },
+    to: {
+      delay: 500,
+      opacity: 1,
+      transform: 'translateX(0%)',
+    },
+  });
+
   return (
     <StyledLayout className="home">
       <Section>
@@ -63,26 +75,28 @@ const Home: React.FC<RouteComponentProps> = ({ history }) => {
           이누.<br />
         </h1>
       </Section>
-      <Section onMouseMove={({ clientX: x, clientY: y }) => set({ xy: calc(x, y) })}>
+      <PromoSection onMouseMove={({ clientX: x, clientY: y }) => set({ xy: calc(x, y) })}>
         <BackgroundLayer />
-        <BackgroundImage src={background} />
+        <BackgroundImage
+          src={background}
+        />
         <animated.div
           // @ts-ignore
           style={{ transform: spring.xy.interpolate(transform) }}
-          >
-          <Image src={illust} />
+        >
+          <Image src={illust} style={imageSpring} />
         </animated.div>
         <AnimatedHeader
           title={<HeaderTitle />}
           desc={<HeaderDesc />}
-          >
+        >
           <Button
             onClick={() => history.push('/about')}
-            >
+          >
             더 알아보기
           </Button>
         </AnimatedHeader>
-      </Section>
+      </PromoSection>
       <Section>
         <PartnerShowcase />
       </Section>
@@ -100,6 +114,11 @@ const Section = styled.section`
   height: 100vh;
   width: 100%;
   position: relative;
+`;
+
+const PromoSection = styled(Section)`
+  overflow: hidden;
+  background-image: linear-gradient(to bottom right, #a6c4ff, #353A86);
 `;
 
 const BackgroundLayer = styled.div`
@@ -130,16 +149,12 @@ const BackgroundImage = styled.img`
   })};
 `;
 
-const Image = styled.img`
+const Image = styled(animated.img)`
   position: absolute;
-  top: -65px;
-  right: -155px;
-  width: 57rem;
+  top: -120px;
+  right: -150px;
+  width: 80rem;
   z-index: -1;
-  transform: translateX(100%);
-  animation: ${SlideInWithSlowerOpacity} 0.8s forwards;
-  animation-delay: 0.5s;
-  opacity: 0.65;
 
   ${media('<=tablet')} {
     width: 45rem;
