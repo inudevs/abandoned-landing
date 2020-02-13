@@ -56,7 +56,14 @@ const Home: React.FC<RouteComponentProps> = ({ history }) => {
   }));
   return (
     <StyledLayout className="home">
-      <div onMouseMove={({ clientX: x, clientY: y }) => set({ xy: calc(x, y) })}>
+      <Section>
+        <h1>
+          이루고,<br />
+          누리다.<br />
+          이누.<br />
+        </h1>
+      </Section>
+      <Section onMouseMove={({ clientX: x, clientY: y }) => set({ xy: calc(x, y) })}>
         <BackgroundLayer />
         <BackgroundImage src={background} />
         <animated.div
@@ -75,8 +82,10 @@ const Home: React.FC<RouteComponentProps> = ({ history }) => {
             더 알아보기
           </Button>
         </AnimatedHeader>
+      </Section>
+      <Section>
         <PartnerShowcase />
-      </div>
+      </Section>
     </StyledLayout>
   );
 };
@@ -84,11 +93,13 @@ const Home: React.FC<RouteComponentProps> = ({ history }) => {
 export default withRouter<RouteComponentProps, any>(Home);
 
 const StyledLayout = styled(Layout)`
-  height: 100vh;
+  height: auto;
+`;
 
-  ${media('<=tablet')} {
-    height: auto;
-  }
+const Section = styled.section`
+  height: 100vh;
+  width: 100%;
+  position: relative;
 `;
 
 const BackgroundLayer = styled.div`

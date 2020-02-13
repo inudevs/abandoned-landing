@@ -28,10 +28,10 @@ const App: React.FC = () => {
       <Normalize />
       <Router>
         <AppContainer>
-          <Navbar
+          {/* <Navbar
             theme={theme}
             onToggleTheme={toggleTheme}
-          />
+          /> */}
           <ThemeProvider
             theme={{ mode: theme }}
           >
