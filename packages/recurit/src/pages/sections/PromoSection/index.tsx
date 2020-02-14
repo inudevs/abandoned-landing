@@ -1,12 +1,14 @@
 import * as React from 'react';
 import { Controller, Scene } from 'react-scrollmagic';
-import { config, useSpring } from 'react-spring';
+import { animated, config, useSpring } from 'react-spring';
 import styled from 'styled-components';
 
 import Section from '../../../components/atoms/Section';
 import Content from './Content';
 
 import { ScrollmagicEvent } from '../../../types/event';
+
+import dimigoImage from '../../../assets/illusts/dimigo.png';
 
 type ClientPosition = {
   clientX: number;
@@ -65,6 +67,9 @@ const PromoSection: React.FC = () => {
       id="promo"
       onMouseMove={onMouseMove}
     >
+      <DimigoImage
+        src={dimigoImage}
+      />
       <Content
         parallexSpring={parallexSpring}
         imageSpring={imageSpring}
@@ -76,7 +81,8 @@ const PromoSection: React.FC = () => {
           triggerElement="#promo"
         >
           {(_: number, event: ScrollmagicEvent) => {
-            if (event.type === 'start') {
+            const { type } = event;
+            if (type === 'start') {
               // @ts-ignore
               setImageSpring(startImageSpring);
               // @ts-ignore
@@ -96,5 +102,20 @@ const PromoSection: React.FC = () => {
 export default PromoSection;
 
 const Container = styled(Section)`
+  position: relative;
   background-image: linear-gradient(to bottom right, #a6c4ff, #353A86);
+`;
+
+const DimigoImage = styled(animated.img)`
+  position: absolute;
+  bottom: -160px;
+  right: -220px;
+  transform: rotate(-35deg);
+  width: 1080px;
+  filter:
+    sepia(100%)
+    hue-rotate(190deg)
+    saturate(500%)
+    brightness(60%)
+    opacity(60%);
 `;
