@@ -21,13 +21,7 @@ const Home: React.FC<RouteComponentProps> = ({ history }) => {
         pageOnChange={onChangePage}
         customPageNumber={page}
       >
-        <Section>
-          <h1>
-            이루고,<br />
-            누리다.<br />
-            이누.<br />
-          </h1>
-        </Section>
+        <Section />
         <PromoSection />
         <Section>
           <PartnerShowcase />
