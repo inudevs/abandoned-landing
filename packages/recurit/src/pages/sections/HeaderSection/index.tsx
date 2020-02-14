@@ -2,7 +2,7 @@ import * as React from 'react';
 import styled from 'styled-components';
 
 import Section from '../../../components/atoms/Section';
-import { TextForParagraph, TextForTitle } from '../../../components/atoms/Text';
+import { TextForParagraph } from '../../../components/atoms/Text';
 
 import Title from './Title';
 

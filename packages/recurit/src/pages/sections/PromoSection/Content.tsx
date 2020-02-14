@@ -36,6 +36,7 @@ type ContentProps = {
 const Content: React.FC<ContentProps & RouteComponentProps> = ({
   parallexSpring, imageSpring, headerSpring, history,
 }) => {
+  const headerParallexInterpolation = parallexSpring.xy.interpolate(transform.header);
   return (
     <>
       <BackgroundLayer />
@@ -44,8 +45,10 @@ const Content: React.FC<ContentProps & RouteComponentProps> = ({
       />
       <AnimatedContainer
         style={{
-          // @ts-ignore
-          transform: parallexSpring.xy.interpolate(transform.backgroundIllust),
+          transform: parallexSpring.xy.interpolate(
+            // @ts-ignore
+            transform.backgroundIllust,
+          ),
         }}
       >
         <Image src={illust} style={imageSpring} />
@@ -56,12 +59,12 @@ const Content: React.FC<ContentProps & RouteComponentProps> = ({
         <AnimatedHeader
           title={
             <Title
-              interpolated={parallexSpring.xy.interpolate(transform.header)}
+              interpolated={headerParallexInterpolation}
             />
           }
           desc={
             <Paragraph
-              interpolated={parallexSpring.xy.interpolate(transform.header)}
+              interpolated={headerParallexInterpolation}
             />
           }
         >
