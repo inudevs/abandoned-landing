@@ -7,6 +7,7 @@ import Layout from '../components/atoms/Layout';
 import Section from '../components/atoms/Section';
 import PartnerShowcase from '../components/templates/PartnerShowcase';
 
+import HeaderSection from './sections/HeaderSection/index';
 import PromoSection from './sections/PromoSection';
 
 const Home: React.FC<RouteComponentProps> = ({ history }) => {
@@ -21,13 +22,7 @@ const Home: React.FC<RouteComponentProps> = ({ history }) => {
         pageOnChange={onChangePage}
         customPageNumber={page}
       >
-        <Section>
-          <h1>
-            이루고,<br />
-            누리다.<br />
-            이누.<br />
-          </h1>
-        </Section>
+        <HeaderSection />
         <PromoSection />
         <Section>
           <PartnerShowcase />

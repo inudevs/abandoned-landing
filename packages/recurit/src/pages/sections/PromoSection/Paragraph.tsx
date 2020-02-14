@@ -55,4 +55,5 @@ const TextForParagraphWithDiv = TextForParagraph.withComponent('div');
 const AnimatedParagraph = animated(styled(TextForParagraphWithDiv)`
   /* color: rgba(255, 255, 255, 0.45); */
   text-shadow: rgba(0, 0, 0, 0.28) 0px 1px 9px;
+  line-height: 1.35;
 `);
