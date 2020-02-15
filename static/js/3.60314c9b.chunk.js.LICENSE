@@ -1,0 +1,21 @@
+/**
+ * @license
+ * Lodash <https://lodash.com/>
+ * Copyright OpenJS Foundation and other contributors <https://openjsf.org/>
+ * Released under MIT license <https://lodash.com/license>
+ * Based on Underscore.js 1.8.3 <http://underscorejs.org/LICENSE>
+ * Copyright Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
+ */
+
+/*!
+ * ScrollMagic v2.0.5 (2015-04-29)
+ * The javascript library for magical scroll interactions.
+ * (c) 2015 Jan Paepke (@janpaepke)
+ * Project Website: http://scrollmagic.io
+ *
+ * @version 2.0.5
+ * @license Dual licensed under MIT license and GPL.
+ * @author Jan Paepke - e-mail@janpaepke.de
+ *
+ * @file Debug Extension for ScrollMagic.
+ */
