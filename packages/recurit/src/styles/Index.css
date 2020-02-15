@@ -1,7 +1,6 @@
 *:not(.token):not(i),
 button {
   font-family: 'Montserrat', 'Noto Sans KR', sans-serif;
-  line-height: 1.35;
   user-select: none;
   -webkit-user-drag: none;
 }

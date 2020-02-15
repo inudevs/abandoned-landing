@@ -30,4 +30,5 @@ export default Title;
 
 const AnimatedTitle = animated(styled(TextForTitle)`
   text-shadow: rgba(0, 0, 0, 0.28) 0px 1px 9px;
+  line-height: 1.35;
 `);
